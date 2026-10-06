@@ -4,349 +4,593 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GM Tecnologia | Cloud & Infraestrutura Avançada</title>
+    
+    <!-- Meta Tags Principais & SEO -->
+    <meta name="description" content="GM Tecnologia - Consultoria especializada em Cloud (Microsoft Azure & M365), Redes Corporativas (Fortinet, Ubiquiti), Segurança da Informação, Observabilidade (Zabbix, Grafana) e Continuidade de Negócios.">
+    <meta name="keywords" content="GM Tecnologia, Cloud, Microsoft Azure, Microsoft 365, Intune, Entra ID, Fortinet, FortiGate, Zabbix, Grafana, GLPI, Redes Corporativas, Suporte TI, Consultoria TI, Osasco, SP">
+    <meta name="author" content="GM Tecnologia">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f172a">
+
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="GM Tecnologia | Cloud & Infraestrutura Avançada">
+    <meta property="og:description" content="Transformando a tecnologia em resultados. Projetos de alto nível em Microsoft Azure, M365, Redes Seguras e Continuidade de Negócios.">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://gustavoms0.github.io/GmTecnologia/">
+    <meta property="og:site_name" content="GM Tecnologia">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GM Tecnologia | Cloud & Infraestrutura Avançada">
+    <meta name="twitter:description" content="Consultoria e Soluções corporativas em Cloud, Redes Seguras e Continuidade de Negócios.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="alternate icon" href="assets/favicon.svg">
+
+    <!-- Preconnects para Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configuração de cores do Tailwind -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         primary: '#0ea5e9', // Sky 500
+                        'primary-hover': '#38bdf8', // Sky 400
                         secondary: '#1e293b', // Slate 800
                         dark: '#0f172a', // Slate 900
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
+
+    <!-- Estilos Customizados & Fontes -->
+    <link rel="stylesheet" href="style.css">
+
     <!-- Ícones Lucide -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        /* Efeito glassmorphism para o menu */
-        .glass {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .gradient-text {
-            background: linear-gradient(to right, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        /* Estilos do Accordion/Details */
-        details > summary {
-            list-style: none;
-        }
-        details > summary::-webkit-details-marker {
-            display: none;
-        }
-    </style>
 </head>
-<body class="bg-dark text-slate-300 font-sans antialiased selection:bg-primary selection:text-white">
+<body class="bg-dark text-slate-300 font-sans antialiased selection:bg-primary selection:text-white min-h-screen flex flex-col">
 
     <!-- HEADER / MENU -->
     <header class="fixed w-full top-0 z-50 glass">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#home" class="text-2xl font-bold text-white tracking-tight">GM<span class="text-primary">Tecnologia</span>.</a>
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-2 group text-2xl font-extrabold text-white tracking-tight focus:outline-none focus:ring-2 focus:ring-primary rounded-lg p-1" aria-label="GM Tecnologia Home">
+                <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-xs font-black text-white shadow-md shadow-sky-500/20 group-hover:scale-105 transition-transform">
+                    GM
+                </span>
+                <span>GM<span class="text-primary">Tecnologia</span>.</span>
+            </a>
             
-            <nav class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#sobre" class="hover:text-primary transition-colors">Sobre a Empresa</a>
-                <a href="#servicos" class="hover:text-primary transition-colors">Serviços</a>
-                <a href="#tecnologias" class="hover:text-primary transition-colors">Tecnologias</a>
-                <a href="#contato" class="hover:text-primary transition-colors">Contato</a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex gap-8 text-sm font-medium items-center" aria-label="Navegação Principal">
+                <a href="#sobre" class="nav-link hover:text-primary transition-colors py-1">Sobre a Empresa</a>
+                <a href="#servicos" class="nav-link hover:text-primary transition-colors py-1">Serviços</a>
+                <a href="#tecnologias" class="nav-link hover:text-primary transition-colors py-1">Tecnologias</a>
+                <a href="#contato" class="nav-link hover:text-primary transition-colors py-1">Contato</a>
             </nav>
 
-            <a href="#contato" class="hidden md:inline-flex bg-primary hover:bg-sky-400 text-white px-5 py-2.5 rounded-lg font-medium transition-all shadow-lg shadow-sky-500/30">
-                Falar com Especialistas
-            </a>
+            <!-- CTA Header Button (Desktop) -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="https://api.whatsapp.com/send?phone=+5511969040579&text=Ol%C3%A1%20GM%20Tecnologia,%20gostaria%20de%20falar%20com%20um%20especialista%20sobre%20meu%20projeto." 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="bg-primary hover:bg-sky-400 text-white px-5 py-2.5 rounded-xl font-medium transition-all shadow-lg shadow-sky-500/30 flex items-center gap-2 active:scale-95">
+                    <i data-lucide="message-square" class="w-4 h-4"></i>
+                    <span>Falar com Especialistas</span>
+                </a>
+            </div>
+
+            <!-- Botão Menu Mobile (Hamburger) -->
+            <button id="mobile-menu-btn" 
+                    type="button" 
+                    class="md:hidden text-slate-300 hover:text-white p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/80 focus:outline-none focus:ring-2 focus:ring-primary transition-colors flex items-center justify-center"
+                    aria-label="Abrir menu de navegação" 
+                    aria-expanded="false" 
+                    aria-controls="mobile-menu">
+                <span id="menu-icon" class="flex items-center"><i data-lucide="menu" class="w-6 h-6"></i></span>
+                <span id="close-icon" class="hidden flex items-center"><i data-lucide="x" class="w-6 h-6"></i></span>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Drawer / Dropdown -->
+        <div id="mobile-menu" 
+             class="hidden md:hidden glass border-t border-slate-800/80 px-6 py-6 transition-all duration-300"
+             role="dialog" 
+             aria-modal="true" 
+             aria-label="Menu Mobile">
+            <nav class="flex flex-col gap-4 text-base font-medium">
+                <a href="#sobre" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-slate-800/80 hover:text-primary text-slate-200 transition-colors">
+                    <i data-lucide="building-2" class="w-5 h-5 text-primary"></i> Sobre a Empresa
+                </a>
+                <a href="#servicos" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-slate-800/80 hover:text-primary text-slate-200 transition-colors">
+                    <i data-lucide="server" class="w-5 h-5 text-primary"></i> Serviços
+                </a>
+                <a href="#tecnologias" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-slate-800/80 hover:text-primary text-slate-200 transition-colors">
+                    <i data-lucide="layers" class="w-5 h-5 text-primary"></i> Tecnologias
+                </a>
+                <a href="#contato" class="mobile-nav-link flex items-center gap-3 p-3 rounded-xl hover:bg-slate-800/80 hover:text-primary text-slate-200 transition-colors">
+                    <i data-lucide="mail" class="w-5 h-5 text-primary"></i> Contato
+                </a>
+                <div class="pt-4 border-t border-slate-800/80 flex flex-col gap-3">
+                    <a href="https://api.whatsapp.com/send?phone=+5511969040579&text=Ol%C3%A1%20GM%20Tecnologia,%20gostaria%20de%20falar%20com%20um%20especialista." 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="w-full bg-primary hover:bg-sky-400 text-white py-3 px-4 rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg shadow-sky-500/30">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i> Falar com Especialistas
+                    </a>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="relative pt-40 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <!-- Background Decorativo -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl z-0 pointer-events-none">
-            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl"></div>
-            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-primary font-semibold tracking-wider uppercase text-sm mb-4">Consultoria e Soluções em TI</h2>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                Especialistas em <br/>
-                <span class="gradient-text">Cloud & Infraestrutura</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Transformando a tecnologia em resultados. Projetos de alto nível em Microsoft Azure, Microsoft 365, Redes Seguras e Continuidade de Negócios para empresas de todos os portes.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#servicos" class="bg-primary hover:bg-sky-400 text-white px-8 py-4 rounded-lg font-medium transition-all shadow-lg shadow-sky-500/30 flex items-center justify-center gap-2">
-                    <i data-lucide="server" class="w-5 h-5"></i> Conhecer Soluções
-                </a>
-                <a href="#contato" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-lg font-medium transition-all border border-slate-700 flex items-center justify-center gap-2">
-                    <i data-lucide="message-square" class="w-5 h-5"></i> Entrar em Contato
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOBRE A EMPRESA -->
-    <section id="sobre" class="py-20 bg-slate-900/50 border-y border-slate-800/50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Sobre a Empresa</h2>
-                    <div class="space-y-4 text-slate-400 text-lg leading-relaxed">
-                        <p>
-                            A <strong>GM Tecnologia</strong> é especializada em <strong>Cloud, Infraestrutura e Segurança</strong>. Com vasta experiência em ambientes corporativos complexos, nossa missão é modernizar a TI e apoiar o crescimento de empresas com soluções robustas e escaláveis.
-                        </p>
-                        <p>
-                            Possuímos um histórico sólido na implantação de plataformas do zero, desde a gestão de identidade e endpoints com <strong class="text-white">Entra ID e Intune</strong>, até a estruturação de redes seguras multifiliais utilizando <strong class="text-white">Fortinet e Ubiquiti</strong>.
-                        </p>
-                        <p>
-                            Acreditamos fortemente na automação e na observabilidade proativa (Zabbix, Grafana) para reduzir custos operacionais e garantir que a tecnologia seja uma alavanca para o seu negócio, e não uma dor de cabeça.
-                        </p>
-                    </div>
-                </div>
-                <!-- Estatísticas / Highlights -->
-                <div class="grid grid-cols-2 gap-6">
-                    <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
-                        <i data-lucide="calendar" class="w-8 h-8 text-primary mb-4"></i>
-                        <h3 class="text-3xl font-bold text-white mb-1">+8 Anos</h3>
-                        <p class="text-slate-400 text-sm">de experiência em TI corporativa</p>
-                    </div>
-                    <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
-                        <i data-lucide="cloud" class="w-8 h-8 text-primary mb-4"></i>
-                        <h3 class="text-3xl font-bold text-white mb-1">M365 & Azure</h3>
-                        <p class="text-slate-400 text-sm">Especialista no ecossistema Microsoft</p>
-                    </div>
-                    <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
-                        <i data-lucide="shield-check" class="w-8 h-8 text-primary mb-4"></i>
-                        <h3 class="text-3xl font-bold text-white mb-1">Zero Trust</h3>
-                        <p class="text-slate-400 text-sm">Foco em identidade e segurança de ponta</p>
-                    </div>
-                    <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
-                        <i data-lucide="activity" class="w-8 h-8 text-primary mb-4"></i>
-                        <h3 class="text-3xl font-bold text-white mb-1">100%</h3>
-                        <p class="text-slate-400 text-sm">Compromisso com alta disponibilidade</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVIÇOS -->
-    <section id="servicos" class="py-24">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Serviços Especializados</h2>
-                <p class="text-slate-400 text-lg">Soluções completas e estratégicas para garantir segurança, disponibilidade e escalabilidade para a sua infraestrutura.</p>
+    <main class="flex-grow">
+        <!-- HERO SECTION -->
+        <section id="home" class="relative pt-36 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+            <!-- Background Decorativo -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl z-0 pointer-events-none">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl animate-pulse"></div>
+                <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group">
-                    <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                        <i data-lucide="cloud" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Cloud & Modern Workplace</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">
-                        Migração e sustentação no <strong>Microsoft Azure</strong>. Gestão completa do <strong>Microsoft 365</strong>, controle de dispositivos empresariais via <strong>Intune (MDM/MAM)</strong> e governança de identidade robusta com <strong>Microsoft Entra ID</strong> (MFA, Conditional Access).
-                    </p>
+            <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+                <div class="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-700/80 px-4 py-1.5 rounded-full mb-6 text-xs sm:text-sm font-medium text-sky-400 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span>Consultoria e Soluções Corporativas em TI</span>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group">
-                    <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                        <i data-lucide="network" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Redes & Segurança</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">
-                        Projetos e sustentação de redes corporativas. Hardening e gestão de Firewalls <strong>Fortinet FortiGate</strong> (VPN Site-to-Site, IPSec), proxy reverso seguro com Nginx e Cloudflare, e estruturação de Wi-Fi empresarial com <strong>Ubiquiti UniFi</strong>.
-                    </p>
-                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight tracking-tight">
+                    Especialistas em <br/>
+                    <span class="gradient-text">Cloud & Infraestrutura</span>
+                </h1>
 
-                <!-- Card 3 -->
-                <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group">
-                    <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                        <i data-lucide="hard-drive" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Virtualização & Backup (DR)</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">
-                        Implementação de estratégias de Disaster Recovery e proteção de dados utilizando <strong>Veeam Backup e Acronis</strong>. Administração e provisionamento de ambientes virtualizados de alta disponibilidade com <strong>Hyper-V e VMware vSphere</strong>.
-                    </p>
-                </div>
+                <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
+                    Transformando a tecnologia em resultados. Projetos de alto nível em <span class="text-slate-200 font-medium">Microsoft Azure</span>, <span class="text-slate-200 font-medium">Microsoft 365</span>, <span class="text-slate-200 font-medium">Redes Seguras</span> e <span class="text-slate-200 font-medium">Continuidade de Negócios</span> para empresas de todos os portes.
+                </p>
 
-                <!-- Card 4 -->
-                <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group">
-                    <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                        <i data-lucide="monitor-dot" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Observabilidade & ITSM</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">
-                        Monitoramento proativo e em tempo real da sua operação com <strong>Zabbix e Grafana</strong> (descoberta SNMP e integrações de API). Estruturação completa da plataforma <strong>GLPI</strong> para gestão de chamados, automação de inventário e SLAs.
-                    </p>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group md:col-span-2 lg:col-span-1 lg:col-start-2">
-                    <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
-                        <i data-lucide="globe" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-3">Publicação de Sites e Sistemas</h3>
-                    <p class="text-slate-400 leading-relaxed mb-6">
-                        Hospedagem ágil e segura para aplicações web. Configuração de proxy reverso com <strong>Nginx</strong>, publicação local externa segura com <strong>Cloudflare Tunnels</strong> e gerenciamento de domínios corporativos.
-                    </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto sm:max-w-none">
+                    <a href="#servicos" class="bg-primary hover:bg-sky-400 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-sky-500/30 flex items-center justify-center gap-2 hover:-translate-y-0.5 active:translate-y-0">
+                        <i data-lucide="server" class="w-5 h-5"></i> Conhecer Soluções
+                    </a>
+                    <a href="#contato" class="bg-slate-800/90 hover:bg-slate-700 text-white px-8 py-4 rounded-xl font-semibold transition-all border border-slate-700 hover:border-slate-600 flex items-center justify-center gap-2 hover:-translate-y-0.5 active:translate-y-0">
+                        <i data-lucide="message-square" class="w-5 h-5"></i> Entrar em Contato
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- TECNOLOGIAS / PILARES -->
-    <section id="tecnologias" class="py-20 bg-slate-900/50 border-y border-slate-800/50">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">Pilares Tecnológicos</h2>
-            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <!-- SOBRE A EMPRESA -->
+        <section id="sobre" class="py-20 bg-slate-900/50 border-y border-slate-800/50 relative">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-primary font-semibold uppercase tracking-wider text-xs mb-3">
+                            <i data-lucide="award" class="w-4 h-4"></i> Quem Somos
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">Experiência, Robustez e Confiabilidade</h2>
+                        <div class="space-y-4 text-slate-400 text-lg leading-relaxed">
+                            <p>
+                                A <strong class="text-white">GM Tecnologia</strong> é especializada em <strong class="text-white">Cloud, Infraestrutura e Segurança</strong>. Com sólida vivência em ambientes corporativos complexos, nossa missão é modernizar a TI e apoiar o crescimento de empresas com soluções robustas e escaláveis.
+                            </p>
+                            <p>
+                                Possuímos um histórico consistente na implantação de plataformas do zero, desde a gestão de identidade e endpoints com <strong class="text-white">Entra ID e Intune</strong>, até a estruturação de redes seguras multifiliais utilizando <strong class="text-white">Fortinet e Ubiquiti</strong>.
+                            </p>
+                            <p>
+                                Acreditamos fortemente na automação e na observabilidade proativa (<strong class="text-white">Zabbix, Grafana</strong>) para reduzir custos operacionais e garantir que a tecnologia seja uma alavanca para o seu negócio, e não uma dor de cabeça.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Estatísticas / Highlights -->
+                    <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                        <div class="bg-slate-800/70 hover:bg-slate-800 p-6 rounded-2xl border border-slate-700/80 transition-all glow-card">
+                            <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center mb-4">
+                                <i data-lucide="calendar" class="w-6 h-6 text-primary"></i>
+                            </div>
+                            <h3 class="text-3xl font-extrabold text-white mb-1">+8 Anos</h3>
+                            <p class="text-slate-400 text-sm">de experiência em TI corporativa</p>
+                        </div>
+
+                        <div class="bg-slate-800/70 hover:bg-slate-800 p-6 rounded-2xl border border-slate-700/80 transition-all glow-card">
+                            <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center mb-4">
+                                <i data-lucide="cloud" class="w-6 h-6 text-primary"></i>
+                            </div>
+                            <h3 class="text-3xl font-extrabold text-white mb-1">M365 & Azure</h3>
+                            <p class="text-slate-400 text-sm">Especialista no ecossistema Microsoft</p>
+                        </div>
+
+                        <div class="bg-slate-800/70 hover:bg-slate-800 p-6 rounded-2xl border border-slate-700/80 transition-all glow-card">
+                            <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center mb-4">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-primary"></i>
+                            </div>
+                            <h3 class="text-3xl font-extrabold text-white mb-1">Zero Trust</h3>
+                            <p class="text-slate-400 text-sm">Foco em identidade e segurança de ponta</p>
+                        </div>
+
+                        <div class="bg-slate-800/70 hover:bg-slate-800 p-6 rounded-2xl border border-slate-700/80 transition-all glow-card">
+                            <div class="w-12 h-12 rounded-xl bg-sky-500/10 flex items-center justify-center mb-4">
+                                <i data-lucide="activity" class="w-6 h-6 text-primary"></i>
+                            </div>
+                            <h3 class="text-3xl font-extrabold text-white mb-1">100%</h3>
+                            <p class="text-slate-400 text-sm">Compromisso com alta disponibilidade</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVIÇOS -->
+        <section id="servicos" class="py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 text-primary font-semibold uppercase tracking-wider text-xs mb-3">
+                        <i data-lucide="briefcase" class="w-4 h-4"></i> Nossas Soluções
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">Serviços Especializados</h2>
+                    <p class="text-slate-400 text-lg">Soluções completas e estratégicas para garantir segurança, disponibilidade e escalabilidade para a sua infraestrutura.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group flex flex-col justify-between glow-card">
+                        <div>
+                            <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                                <i data-lucide="cloud" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Cloud & Modern Workplace</h3>
+                            <p class="text-slate-400 leading-relaxed mb-6">
+                                Migração e sustentação no <strong class="text-slate-200">Microsoft Azure</strong>. Gestão completa do <strong class="text-slate-200">Microsoft 365</strong>, controle de dispositivos empresariais via <strong class="text-slate-200">Intune (MDM/MAM)</strong> e governança de identidade robusta com <strong class="text-slate-200">Microsoft Entra ID</strong> (MFA, Conditional Access).
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-700/60">
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">Azure</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">M365</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">Intune MDM</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">Entra ID</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group flex flex-col justify-between glow-card">
+                        <div>
+                            <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                                <i data-lucide="network" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Redes & Segurança</h3>
+                            <p class="text-slate-400 leading-relaxed mb-6">
+                                Projetos e sustentação de redes corporativas. Hardening e gestão de Firewalls <strong class="text-slate-200">Fortinet FortiGate</strong> (VPN Site-to-Site, IPSec), proxy reverso seguro com Nginx e Cloudflare, e estruturação de Wi-Fi empresarial com <strong class="text-slate-200">Ubiquiti UniFi</strong>.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-700/60">
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">FortiGate</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">VPN IPSec</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">Ubiquiti UniFi</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">Firewall NGFW</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group flex flex-col justify-between glow-card">
+                        <div>
+                            <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                                <i data-lucide="hard-drive" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Virtualização & Backup (DR)</h3>
+                            <p class="text-slate-400 leading-relaxed mb-6">
+                                Implementação de estratégias de Disaster Recovery e proteção de dados utilizando <strong class="text-slate-200">Veeam Backup e Acronis</strong>. Administração e provisionamento de ambientes virtualizados de alta disponibilidade com <strong class="text-slate-200">Hyper-V e VMware vSphere</strong>.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-700/60">
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">Veeam Backup</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">VMware vSphere</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">Hyper-V</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">Disaster Recovery</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group flex flex-col justify-between glow-card">
+                        <div>
+                            <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                                <i data-lucide="monitor-dot" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Observabilidade & ITSM</h3>
+                            <p class="text-slate-400 leading-relaxed mb-6">
+                                Monitoramento proativo e em tempo real da sua operação com <strong class="text-slate-200">Zabbix e Grafana</strong> (descoberta SNMP e integrações de API). Estruturação completa da plataforma <strong class="text-slate-200">GLPI</strong> para gestão de chamados, automação de inventário e SLAs.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-700/60">
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">Zabbix</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">Grafana</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">GLPI ITSM</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">SNMP & APIs</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group flex flex-col justify-between glow-card md:col-span-2 lg:col-span-2">
+                        <div>
+                            <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                                <i data-lucide="globe" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-3">Publicação de Sites e Sistemas</h3>
+                            <p class="text-slate-400 leading-relaxed mb-6">
+                                Hospedagem ágil e segura para aplicações web. Configuração de proxy reverso com <strong class="text-slate-200">Nginx</strong>, publicação local externa segura com <strong class="text-slate-200">Cloudflare Tunnels</strong>, proteção contra ataques com WAF e gerenciamento completo de domínios e certificados SSL corporativos.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 pt-4 border-t border-slate-700/60">
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">Nginx Proxy</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">Cloudflare Tunnels</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">SSL / WAF</span>
+                            <span class="text-xs px-2.5 py-1 rounded-md bg-slate-700/60 text-slate-300 font-medium">DNS Gerenciado</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECNOLOGIAS / PILARES -->
+        <section id="tecnologias" class="py-20 bg-slate-900/50 border-y border-slate-800/50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <div class="inline-flex items-center gap-2 text-primary font-semibold uppercase tracking-wider text-xs mb-3">
+                        <i data-lucide="cpu" class="w-4 h-4"></i> Estrutura & Métodos
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">Pilares Tecnológicos</h2>
+                    <p class="text-slate-400">Clique nas áreas abaixo para entender nossa metodologia em cada frente de atuação.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                    
+                    <details class="group bg-slate-800/70 border border-slate-700 rounded-2xl overflow-hidden transition-all duration-200">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:bg-slate-700/40 transition-colors select-none">
+                            <span class="flex items-center gap-3 text-base sm:text-lg">
+                                <span class="p-2 rounded-lg bg-sky-500/10 text-primary">
+                                    <i data-lucide="cloud" class="w-5 h-5"></i>
+                                </span>
+                                Computação em Nuvem (Cloud)
+                            </span>
+                            <span class="chevron-icon text-slate-400">
+                                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                            </span>
+                        </summary>
+                        <div class="text-slate-400 p-6 pt-2 border-t border-slate-700/40 bg-slate-800/30 leading-relaxed text-sm sm:text-base">
+                            Migração e gerenciamento de infraestrutura em nuvem (pública ou híbrida). Implementação de soluções escaláveis (IaaS/PaaS) e modernização do ambiente de trabalho, garantindo alta disponibilidade, redução de custos e colaboração segura para sua equipe.
+                        </div>
+                    </details>
+
+                    <details class="group bg-slate-800/70 border border-slate-700 rounded-2xl overflow-hidden transition-all duration-200">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:bg-slate-700/40 transition-colors select-none">
+                            <span class="flex items-center gap-3 text-base sm:text-lg">
+                                <span class="p-2 rounded-lg bg-sky-500/10 text-primary">
+                                    <i data-lucide="shield" class="w-5 h-5"></i>
+                                </span>
+                                Gestão de Identidades e Acessos
+                            </span>
+                            <span class="chevron-icon text-slate-400">
+                                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                            </span>
+                        </summary>
+                        <div class="text-slate-400 p-6 pt-2 border-t border-slate-700/40 bg-slate-800/30 leading-relaxed text-sm sm:text-base">
+                            Controle rigoroso sobre quem acessa os dados da empresa. Implementação de Single Sign-On (SSO), autenticação multifator (MFA), acesso condicional e gerenciamento centralizado de dispositivos corporativos (MDM) protegendo a empresa contra acessos não autorizados.
+                        </div>
+                    </details>
+
+                    <details class="group bg-slate-800/70 border border-slate-700 rounded-2xl overflow-hidden transition-all duration-200">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:bg-slate-700/40 transition-colors select-none">
+                            <span class="flex items-center gap-3 text-base sm:text-lg">
+                                <span class="p-2 rounded-lg bg-sky-500/10 text-primary">
+                                    <i data-lucide="lock" class="w-5 h-5"></i>
+                                </span>
+                                Segurança e Redes Corporativas
+                            </span>
+                            <span class="chevron-icon text-slate-400">
+                                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                            </span>
+                        </summary>
+                        <div class="text-slate-400 p-6 pt-2 border-t border-slate-700/40 bg-slate-800/30 leading-relaxed text-sm sm:text-base">
+                            Estruturação e proteção de redes complexas. Interligação de filiais através de VPNs seguras, proteção contra ameaças via Firewalls de Próxima Geração (NGFW) e implantação de redes sem fio corporativas com alta performance e segmentação VLAN.
+                        </div>
+                    </details>
+
+                    <details class="group bg-slate-800/70 border border-slate-700 rounded-2xl overflow-hidden transition-all duration-200">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:bg-slate-700/40 transition-colors select-none">
+                            <span class="flex items-center gap-3 text-base sm:text-lg">
+                                <span class="p-2 rounded-lg bg-sky-500/10 text-primary">
+                                    <i data-lucide="server" class="w-5 h-5"></i>
+                                </span>
+                                Continuidade de Negócios e Backup
+                            </span>
+                            <span class="chevron-icon text-slate-400">
+                                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                            </span>
+                        </summary>
+                        <div class="text-slate-400 p-6 pt-2 border-t border-slate-700/40 bg-slate-800/30 leading-relaxed text-sm sm:text-base">
+                            Garantia de que a sua operação não vai parar em caso de imprevistos ou ataques de ransomware. Arquitetura de clusters de virtualização de alta disponibilidade e elaboração de planos robustos de backup imutável, replicação e Disaster Recovery testado.
+                        </div>
+                    </details>
+
+                    <details class="group bg-slate-800/70 border border-slate-700 rounded-2xl overflow-hidden transition-all duration-200">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:bg-slate-700/40 transition-colors select-none">
+                            <span class="flex items-center gap-3 text-base sm:text-lg">
+                                <span class="p-2 rounded-lg bg-sky-500/10 text-primary">
+                                    <i data-lucide="activity" class="w-5 h-5"></i>
+                                </span>
+                                Observabilidade e Governança
+                            </span>
+                            <span class="chevron-icon text-slate-400">
+                                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                            </span>
+                        </summary>
+                        <div class="text-slate-400 p-6 pt-2 border-t border-slate-700/40 bg-slate-800/30 leading-relaxed text-sm sm:text-base">
+                            Acompanhamento proativo de todos os ativos de tecnologia da empresa em tempo real. Criação de dashboards de saúde e desempenho para prevenir falhas, integrado a um sistema centralizado de gestão de chamados (ITSM / GLPI).
+                        </div>
+                    </details>
+
+                    <details class="group bg-slate-800/70 border border-slate-700 rounded-2xl overflow-hidden transition-all duration-200">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-6 text-white hover:bg-slate-700/40 transition-colors select-none">
+                            <span class="flex items-center gap-3 text-base sm:text-lg">
+                                <span class="p-2 rounded-lg bg-sky-500/10 text-primary">
+                                    <i data-lucide="globe" class="w-5 h-5"></i>
+                                </span>
+                                Publicação Segura de Aplicações
+                            </span>
+                            <span class="chevron-icon text-slate-400">
+                                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                            </span>
+                        </summary>
+                        <div class="text-slate-400 p-6 pt-2 border-t border-slate-700/40 bg-slate-800/30 leading-relaxed text-sm sm:text-base">
+                            Hospedagem, balanceamento de carga e publicação ágil de sistemas ou sites. Aplicação de camadas extras de segurança como túneis criptografados, Web Application Firewall (WAF) e proxies reversos com renovação automatizada de certificados.
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="py-24 relative overflow-hidden">
+            <!-- Background Glow Decorativo -->
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl z-0 pointer-events-none">
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-t-full blur-3xl"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+                <div class="inline-flex items-center gap-2 text-primary font-semibold uppercase tracking-wider text-xs mb-3">
+                    <i data-lucide="phone-call" class="w-4 h-4"></i> Vamos Conversar
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6 tracking-tight">Pronto para modernizar sua TI?</h2>
+                <p class="text-lg md:text-xl text-slate-400 mb-10 leading-relaxed">
+                    Seja para uma migração para a nuvem, estruturação de uma rede segura ou suporte avançado, estamos à disposição para entender o seu cenário e propor a melhor solução tecnológica.
+                </p>
                 
-                <details class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:bg-slate-700/50 transition-colors">
-                        <span class="flex items-center gap-3"><i data-lucide="cloud" class="w-5 h-5 text-primary"></i> Computação em Nuvem (Cloud)</span>
-                        <span class="transition group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
-                        </span>
-                    </summary>
-                    <div class="text-slate-400 p-5 border-t border-slate-700/50 bg-slate-800/50 leading-relaxed">
-                        Migração e gerenciamento de infraestrutura em nuvem (pública ou híbrida). Implementação de soluções escaláveis (IaaS/PaaS) e modernização do ambiente de trabalho, garantindo alta disponibilidade e colaboração segura para sua equipe.
-                    </div>
-                </details>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+                    <a href="https://api.whatsapp.com/send?phone=+5511969040579&text=Ol%C3%A1%20GM%20Tecnologia,%20vi%20o%20site%20e%20gostaria%20de%20falar%20sobre%20um%20projeto%20de%20TI." 
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-3 hover:-translate-y-0.5 active:translate-y-0">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i> Chamar no WhatsApp
+                    </a>
+                </div>
 
-                <details class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:bg-slate-700/50 transition-colors">
-                        <span class="flex items-center gap-3"><i data-lucide="shield" class="w-5 h-5 text-primary"></i> Gestão de Identidades e Acessos</span>
-                        <span class="transition group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
-                        </span>
-                    </summary>
-                    <div class="text-slate-400 p-5 border-t border-slate-700/50 bg-slate-800/50 leading-relaxed">
-                        Controle rigoroso sobre quem acessa os dados da empresa. Implementação de Single Sign-On (SSO), autenticação multifator (MFA), acesso condicional e gerenciamento centralizado de dispositivos corporativos (MDM) contra acessos não autorizados.
+                <!-- Contatos Grid -->
+                <div class="grid sm:grid-cols-3 gap-6 text-left">
+                    <!-- E-mail Card com Botão de Copiar -->
+                    <div class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 flex flex-col justify-between group hover:border-slate-500 transition-colors">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="bg-slate-700/80 p-3 rounded-xl">
+                                <i data-lucide="mail" class="w-6 h-6 text-primary"></i>
+                            </div>
+                            <div class="overflow-hidden">
+                                <p class="text-xs text-slate-400 font-medium">E-mail corporativo</p>
+                                <p class="text-white font-medium text-sm truncate" title="gustavo.suportetec@gmail.com">gustavo.suportetec@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 pt-3 border-t border-slate-700/60">
+                            <a href="mailto:gustavo.suportetec@gmail.com" class="text-xs font-semibold text-slate-300 hover:text-white transition-colors flex items-center gap-1">
+                                Enviar <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                            <span class="text-slate-600">•</span>
+                            <button type="button" class="copy-email-btn text-xs font-semibold text-primary hover:text-sky-300 transition-colors flex items-center gap-1" data-email="gustavo.suportetec@gmail.com">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copiar
+                            </button>
+                        </div>
                     </div>
-                </details>
 
-                <details class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:bg-slate-700/50 transition-colors">
-                        <span class="flex items-center gap-3"><i data-lucide="lock" class="w-5 h-5 text-primary"></i> Segurança e Redes Corporativas</span>
-                        <span class="transition group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
-                        </span>
-                    </summary>
-                    <div class="text-slate-400 p-5 border-t border-slate-700/50 bg-slate-800/50 leading-relaxed">
-                        Estruturação e proteção de redes complexas. Interligação de filiais através de VPNs seguras, proteção contra ameaças via Firewalls de Próxima Geração (NGFW) e implantação de redes sem fio corporativas de alta performance.
-                    </div>
-                </details>
+                    <!-- LinkedIn Card -->
+                    <a href="https://linkedin.com/in/gustavotecnologia" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-slate-500 transition-colors flex items-center justify-between group">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-slate-700/80 p-3 rounded-xl">
+                                <i data-lucide="linkedin" class="w-6 h-6 text-sky-400"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">LinkedIn</p>
+                                <p class="text-white font-medium">/gustavotecnologia</p>
+                            </div>
+                        </div>
+                        <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+                    </a>
 
-                <details class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:bg-slate-700/50 transition-colors">
-                        <span class="flex items-center gap-3"><i data-lucide="server" class="w-5 h-5 text-primary"></i> Continuidade de Negócios e Backup</span>
-                        <span class="transition group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
-                        </span>
-                    </summary>
-                    <div class="text-slate-400 p-5 border-t border-slate-700/50 bg-slate-800/50 leading-relaxed">
-                        Garantia de que a sua operação não vai parar em caso de imprevistos. Arquitetura de clusters de virtualização de alta disponibilidade e elaboração de planos robustos de backup, replicação e Disaster Recovery.
-                    </div>
-                </details>
-
-                <details class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:bg-slate-700/50 transition-colors">
-                        <span class="flex items-center gap-3"><i data-lucide="activity" class="w-5 h-5 text-primary"></i> Observabilidade e Governança</span>
-                        <span class="transition group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
-                        </span>
-                    </summary>
-                    <div class="text-slate-400 p-5 border-t border-slate-700/50 bg-slate-800/50 leading-relaxed">
-                        Acompanhamento proativo de todos os ativos de tecnologia da empresa em tempo real. Criação de dashboards de saúde e desempenho para prevenir falhas, integrado a um sistema centralizado de gestão de chamados (ITSM).
-                    </div>
-                </details>
-
-                <details class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
-                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:bg-slate-700/50 transition-colors">
-                        <span class="flex items-center gap-3"><i data-lucide="globe" class="w-5 h-5 text-primary"></i> Publicação Segura de Aplicações</span>
-                        <span class="transition group-open:rotate-180">
-                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
-                        </span>
-                    </summary>
-                    <div class="text-slate-400 p-5 border-t border-slate-700/50 bg-slate-800/50 leading-relaxed">
-                        Hospedagem, balanceamento de carga e publicação ágil de sistemas ou sites. Aplicação de camadas extras de segurança como túneis criptografados, Web Application Firewall (WAF) e proxies reversos.
-                    </div>
-                </details>
-
+                    <!-- GitHub Card -->
+                    <a href="https://github.com/GustavoMS0" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700/80 hover:border-slate-500 transition-colors flex items-center justify-between group">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-slate-700/80 p-3 rounded-xl">
+                                <i data-lucide="github" class="w-6 h-6 text-slate-200"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">GitHub</p>
+                                <p class="text-white font-medium">/GustavoMS0</p>
+                            </div>
+                        </div>
+                        <i data-lucide="external-link" class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors"></i>
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CONTATO -->
-    <section id="contato" class="py-24 relative overflow-hidden">
-        <!-- Decorativo -->
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl z-0 pointer-events-none">
-            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-t-full blur-3xl"></div>
-        </div>
-
-        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-4xl font-bold text-white mb-6">Pronto para modernizar sua TI?</h2>
-            <p class="text-xl text-slate-400 mb-10 leading-relaxed">
-                Seja para uma migração para a nuvem, estruturação de uma rede segura ou suporte avançado, estamos à disposição para entender o seu cenário e propor a melhor solução tecnológica.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-6 mb-16">
-                <a href="https://api.whatsapp.com/send?phone=+5511969040579&text=Olá GM Tecnologia, vi o site e gostaria de falar sobre um projeto de TI." 
-                   target="_blank"
-                   class="bg-green-600 hover:bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg shadow-green-600/30 flex items-center justify-center gap-3">
-                    <i data-lucide="message-circle" class="w-6 h-6"></i> Chamar no WhatsApp
-                </a>
-            </div>
-
-            <!-- Contatos Grid -->
-            <div class="grid sm:grid-cols-3 gap-6 text-left">
-                <a href="mailto:gustavo.suportetec@gmail.com" class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 hover:border-slate-500 transition-colors flex items-center gap-4">
-                    <div class="bg-slate-700 p-3 rounded-xl"><i data-lucide="mail" class="w-6 h-6 text-white"></i></div>
-                    <div>
-                        <p class="text-sm text-slate-400">E-mail</p>
-                        <p class="text-white font-medium truncate" title="gustavo.suportetec@gmail.com">gustavo.suportetec...</p>
-                    </div>
-                </a>
-                <a href="https://linkedin.com/in/gustavotecnologia" target="_blank" class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 hover:border-slate-500 transition-colors flex items-center gap-4">
-                    <div class="bg-slate-700 p-3 rounded-xl"><i data-lucide="linkedin" class="w-6 h-6 text-white"></i></div>
-                    <div>
-                        <p class="text-sm text-slate-400">LinkedIn</p>
-                        <p class="text-white font-medium">/gustavotecnologia</p>
-                    </div>
-                </a>
-                <a href="https://github.com/GustavoMS0" target="_blank" class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 hover:border-slate-500 transition-colors flex items-center gap-4">
-                    <div class="bg-slate-700 p-3 rounded-xl"><i data-lucide="github" class="w-6 h-6 text-white"></i></div>
-                    <div>
-                        <p class="text-sm text-slate-400">GitHub</p>
-                        <p class="text-white font-medium">/GustavoMS0</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-slate-800 bg-dark py-10">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-slate-500 text-sm">© 2026 GM Tecnologia. Todos os direitos reservados.</p>
-            <div class="text-slate-500 text-sm flex gap-4">
-                <span>Osasco - SP</span>
+    <footer class="border-t border-slate-800 bg-slate-950/80 py-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <span class="w-6 h-6 rounded-md bg-gradient-to-tr from-sky-500 to-indigo-600 flex items-center justify-center text-[10px] font-black text-white">
+                    GM
+                </span>
+                <span class="text-white font-bold tracking-tight">GM<span class="text-primary">Tecnologia</span></span>
+                <span class="text-slate-600">•</span>
+                <p class="text-slate-400 text-sm">© 2026 GM Tecnologia. Todos os direitos reservados.</p>
+            </div>
+            
+            <div class="text-slate-400 text-sm flex items-center gap-4">
+                <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4 text-primary"></i> Osasco - SP</span>
             </div>
         </div>
     </footer>
 
-    <!-- Inicializar Ícones -->
-    <script>
-        lucide.createIcons();
-    </script>
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://api.whatsapp.com/send?phone=+5511969040579&text=Ol%C3%A1%20GM%20Tecnologia,%20gostaria%20de%20falar%20sobre%20um%20projeto." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="floating-whatsapp fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl shadow-emerald-600/40 transition-all hover:scale-110 active:scale-95"
+       aria-label="Atendimento imediato via WhatsApp">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- Botão Flutuante Voltar ao Topo -->
+    <button id="back-to-top" 
+            type="button" 
+            class="fixed bottom-24 right-6 z-40 bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white w-11 h-11 rounded-full flex items-center justify-center border border-slate-700 shadow-lg opacity-0 pointer-events-none translate-y-4 transition-all duration-300"
+            aria-label="Voltar ao início da página">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- Toast Feedback para Cópia -->
+    <div id="copy-toast" 
+         class="toast-feedback fixed bottom-8 left-1/2 -translate-x-1/2 z-50 bg-slate-800 text-white text-sm px-5 py-3 rounded-2xl border border-slate-700 shadow-2xl flex items-center gap-3"
+         role="alert">
+        <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+        <span class="toast-text font-medium">E-mail copiado com sucesso!</span>
+    </div>
+
+    <!-- Scripts Principais -->
+    <script src="main.js" defer></script>
 </body>
 </html>
-

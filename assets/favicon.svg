@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="gm-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Container -->
+  <rect width="64" height="64" rx="14" fill="url(#bg-grad)"/>
+  <rect width="62" height="62" x="1" y="1" rx="13" stroke="url(#gm-grad)" stroke-width="1.5" stroke-opacity="0.4"/>
+  
+  <!-- Stylized Tech Nodes -->
+  <circle cx="15" cy="15" r="2.5" fill="#38bdf8" opacity="0.8"/>
+  <circle cx="49" cy="49" r="2.5" fill="#818cf8" opacity="0.8"/>
+  <path d="M15 15 L22 22" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="2 2"/>
+  <path d="M42 42 L49 49" stroke="#818cf8" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="2 2"/>
+
+  <!-- GM Monogram Text -->
+  <text x="32" y="39" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800" text-anchor="middle" fill="url(#gm-grad)" letter-spacing="-0.5">GM</text>
+  
+  <!-- Subtle accent dot -->
+  <circle cx="47" cy="38" r="2" fill="#38bdf8"/>
+</svg>
