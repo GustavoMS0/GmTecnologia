@@ -1,12 +1,12 @@
-# 🌐 GM Tecnologia | Cloud & Infraestrutura Avançada
+# 🌐 GM Tecnologia | TI Estratégica, Cloud & Desenvolvimento de Soluções
 
 <p align="center">
   <img src="assets/favicon.svg" alt="GM Tecnologia Logo" width="80" height="80" />
 </p>
 
 <p align="center">
-  <strong>Consultoria e Soluções Corporativas em TI</strong><br>
-  Projetos de alto nível em Microsoft Azure, Microsoft 365, Redes Seguras e Continuidade de Negócios.
+  <strong>Consultoria Corporativa em TI, Nuvem & Desenvolvimento Sob Medida</strong><br>
+  Soluções de alto nível em Infraestrutura Moderna, Segurança da Informação, Cloud Computing e Engenharia de Software.
 </p>
 
 <p align="center">
@@ -22,13 +22,14 @@
 
 ## 📌 Sobre a GM Tecnologia
 
-A **GM Tecnologia** é especializada em **Cloud, Infraestrutura e Segurança**. Nossa missão é modernizar a infraestrutura de TI e apoiar a continuidade e escalabilidade de negócios através de tecnologias robustas:
+A **GM Tecnologia** é uma parceira estratégica para empresas que buscam modernização, resiliência e inovação através da tecnologia. Combinamos sólida experiência em infraestrutura, nuvem e desenvolvimento de soluções digitais:
 
-- ☁️ **Cloud & Modern Workplace**: Sustentação e migração Microsoft Azure, governança de identidade com Microsoft Entra ID (MFA, Conditional Access) e gestão de endpoints via Intune (MDM/MAM).
-- 🛡️ **Redes & Segurança Perimetral**: Firewalls Fortinet FortiGate (VPNs IPSec / Site-to-Site), roteamento avançado e redes Wi-Fi empresariais com Ubiquiti UniFi.
-- 💾 **Virtualização & Disaster Recovery**: Ambientes de alta disponibilidade VMware vSphere / Hyper-V e rotinas de backup imutável com Veeam e Acronis.
-- 📊 **Observabilidade & ITSM**: Monitoramento proativo 24/7 com Zabbix e Grafana (SNMP e API) e estruturação de chamados e SLAs com GLPI.
-- 🚀 **Publicação Segura de Aplicações**: Proxies reversos Nginx, túneis seguros Cloudflare Tunnels e proteção Web Application Firewall (WAF).
+- 💻 **Desenvolvimento de Soluções Sob Medida**: Criação de sistemas web, portais corporativos, integrações de APIs e automação inteligente de processos repetitivos.
+- ☁️ **Computação em Nuvem & Modernização**: Migração e gestão de ambientes corporativos em nuvem, garantindo mobilidade, escalabilidade e redução de custos operacionais.
+- 🛡️ **Segurança da Informação & Conectividade**: Blindagem perimetral, interligação segura entre unidades de negócio e políticas ativas de proteção contra ameaças digitais.
+- 💾 **Continuidade de Negócios & Resiliência**: Estratégias preventivas de Disaster Recovery, backups imutáveis e garantia de alta disponibilidade sem interrupções.
+- 📊 **Observabilidade Proativa & Governança de TI**: Monitoramento 24/7 de ativos tecnológicos e suporte estruturado com SLAs ágeis.
+- 🚀 **Publicação Segura de Aplicações**: Hospedagem de alta performance com certificados criptografados e proteção contra ataques web (WAF).
 
 ---
 
