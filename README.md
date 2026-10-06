@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Consultoria Corporativa em TI, Desenvolvimento de Soluções Sob Medida & Infraestrutura</strong><br>
-  Soluções agnósticas integrando tecnologias proprietárias e Open Source com foco em resultados de negócio.
+  Soluções flexíveis e dimensionadas para Pequenas, Médias e Grandes Empresas — integrando tecnologias proprietárias e Open Source.
 </p>
 
 <p align="center">
@@ -22,7 +22,7 @@
 
 ## 📌 Sobre a GM Tecnologia
 
-A **GM Tecnologia** é uma parceira estratégica para empresas que buscam modernização, segurança e soluções sob medida com flexibilidade tecnológica e independência de fornecedor:
+A **GM Tecnologia** é uma parceira estratégica para empresas de todos os portes (pequenos negócios a grandes corporações) que buscam modernização, segurança e soluções sob medida com independência de fornecedores:
 
 - 💻 **Desenvolvimento de Soluções & Sistemas Sob Medida**: Softwares personalizados, painéis administrativos, sistemas de gestão e microsserviços proprietários ou open source.
 - 🌐 **Presença Web, Domínios & Publicação de Aplicações**: Criação de sites e landing pages responsivas, gestão avançada de DNS, certificados SSL e deploy contínuo.
