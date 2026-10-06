@@ -66,25 +66,32 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* Details & Accordion Enhancements */
-details {
+/* Accordion Smooth & Fluid Animations */
+#tecnologias details {
   align-self: start;
   height: auto;
+  overflow: hidden;
+  will-change: height;
 }
 
-details > summary {
+#tecnologias details summary {
   list-style: none;
+  cursor: pointer;
 }
 
-details > summary::-webkit-details-marker {
+#tecnologias details summary::-webkit-details-marker {
   display: none;
 }
 
-details summary .chevron-icon {
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+#tecnologias details summary .chevron-icon {
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-details[open] summary .chevron-icon {
+#tecnologias details.is-open summary .chevron-icon,
+#tecnologias details[open] summary .chevron-icon {
   transform: rotate(180deg);
 }
 
@@ -115,8 +122,13 @@ details[open] summary .chevron-icon {
   box-shadow: 0 0 25px -5px rgba(14, 165, 233, 0.4);
 }
 
+.glow-card {
+  transition: all 0.25s ease;
+}
+
 .glow-card:hover {
   box-shadow: 0 20px 40px -15px rgba(14, 165, 233, 0.15);
+  transform: translateY(-2px);
 }
 
 /* Floating Actions Pulse */

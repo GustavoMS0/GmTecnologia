@@ -1,6 +1,6 @@
 /**
  * GM Tecnologia - Main Script
- * Handles Navigation, Mobile Drawer, ScrollSpy, Copy Email Toast, and Micro-interactions
+ * Handles Navigation, Mobile Drawer, ScrollSpy, Fluid Accordion Animations, and Copy Toast
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -143,7 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
         await navigator.clipboard.writeText(email);
         showToast('E-mail copiado com sucesso!');
       } catch (err) {
-        // Fallback for older browsers
         const textarea = document.createElement('textarea');
         textarea.value = email;
         document.body.appendChild(textarea);
@@ -159,17 +158,95 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 7. Accordion Single-Open Enhancement (Optional smooth behavior)
-  const accordionDetails = document.querySelectorAll('#tecnologias details');
-  accordionDetails.forEach((targetDetail) => {
-    targetDetail.addEventListener('toggle', () => {
-      if (targetDetail.open) {
-        accordionDetails.forEach((otherDetail) => {
-          if (otherDetail !== targetDetail && otherDetail.open) {
-            otherDetail.removeAttribute('open');
-          }
+  // 7. Fluid, Smoothly Animated Accordion (Web Animations API)
+  function initAnimatedAccordion() {
+    const detailsList = document.querySelectorAll('#tecnologias details');
+
+    detailsList.forEach((el) => {
+      const summary = el.querySelector('summary');
+      const content = el.querySelector('.accordion-body') || el.querySelector('div:not(summary)');
+      if (!summary || !content) return;
+
+      let animation = null;
+      let isClosing = false;
+      let isExpanding = false;
+
+      summary.addEventListener('click', (e) => {
+        e.preventDefault();
+        el.style.overflow = 'hidden';
+
+        if (isClosing || !el.open) {
+          // Smoothly close any other open accordion in this section
+          detailsList.forEach((other) => {
+            if (other !== el && other.open && other._shrink) {
+              other._shrink();
+            }
+          });
+          openAccordion();
+        } else if (isExpanding || el.open) {
+          shrinkAccordion();
+        }
+      });
+
+      function shrinkAccordion() {
+        if (isClosing) return;
+        isClosing = true;
+        el.classList.remove('is-open');
+
+        const startHeight = `${el.offsetHeight}px`;
+        const endHeight = `${summary.offsetHeight}px`;
+
+        if (animation) animation.cancel();
+
+        animation = el.animate(
+          { height: [startHeight, endHeight] },
+          { duration: 280, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' }
+        );
+
+        animation.onfinish = () => {
+          el.open = false;
+          isClosing = false;
+          el.style.height = '';
+          el.style.overflow = '';
+        };
+
+        animation.oncancel = () => {
+          isClosing = false;
+        };
+      }
+
+      function openAccordion() {
+        el.style.height = `${el.offsetHeight}px`;
+        el.open = true;
+        el.classList.add('is-open');
+
+        window.requestAnimationFrame(() => {
+          isExpanding = true;
+          const startHeight = `${el.offsetHeight}px`;
+          const endHeight = `${summary.offsetHeight + content.offsetHeight}px`;
+
+          if (animation) animation.cancel();
+
+          animation = el.animate(
+            { height: [startHeight, endHeight] },
+            { duration: 320, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' }
+          );
+
+          animation.onfinish = () => {
+            isExpanding = false;
+            el.style.height = '';
+            el.style.overflow = '';
+          };
+
+          animation.oncancel = () => {
+            isExpanding = false;
+          };
         });
       }
+
+      el._shrink = shrinkAccordion;
     });
-  });
+  }
+
+  initAnimatedAccordion();
 });

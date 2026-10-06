@@ -1,12 +1,12 @@
-# 🌐 GM Tecnologia | TI Estratégica, Cloud & Desenvolvimento de Soluções
+# 🌐 GM Tecnologia | TI Estratégica, Desenvolvimento de Soluções & Infraestrutura
 
 <p align="center">
   <img src="assets/favicon.svg" alt="GM Tecnologia Logo" width="80" height="80" />
 </p>
 
 <p align="center">
-  <strong>Consultoria Corporativa em TI, Nuvem & Desenvolvimento Sob Medida</strong><br>
-  Soluções de alto nível em Infraestrutura Moderna, Segurança da Informação, Cloud Computing e Engenharia de Software.
+  <strong>Consultoria Corporativa em TI, Desenvolvimento de Soluções Sob Medida & Infraestrutura</strong><br>
+  Soluções agnósticas integrando tecnologias proprietárias e Open Source com foco em resultados de negócio.
 </p>
 
 <p align="center">
@@ -22,17 +22,17 @@
 
 ## 📌 Sobre a GM Tecnologia
 
-A **GM Tecnologia** é uma parceira estratégica para empresas que buscam presença digital de impacto, conectividade estável e segurança contínua:
+A **GM Tecnologia** é uma parceira estratégica para empresas que buscam modernização, segurança e soluções sob medida com flexibilidade tecnológica e independência de fornecedor:
 
-- 🌐 **Desenvolvimento Web & Portais**: Criação de sites institucionais modernos, landing pages de alta conversão e sistemas web sob medida.
-- 🌍 **Domínios, DNS & Publicação de Sites**: Registro e gerenciamento completo de domínios, zonas DNS, certificados SSL e deploy seguro.
-- ✉️ **E-mail Corporativo & Microsoft Exchange**: Implantação, administração e migração de Exchange/M365 com máxima entregabilidade (SPF, DKIM, DMARC).
-- 🔌 **Reestruturação de Redes Corporativas**: Diagnóstico, segmentação em VLANs, roteamento avançado e Wi-Fi corporativo de alta densidade.
-- 🛡️ **Segurança da Informação & Firewalls**: Proteção perimetral, VPNs criptografadas matriz-filial e home office, e controle rigoroso de acessos.
-- 📊 **Sistemas de Monitoramento & Observabilidade**: Implantação e parametrização de plataformas em tempo real com alertas preventivos 24/7.
-- ⚡ **Automação de Processos & Rotinas**: Eliminação de tarefas manuais com scripts inteligentes e integração entre sistemas.
-- 💾 **Backup Corporativo & Continuidade (DR)**: Rotinas de backup imutável, proteção contra ransomware e planos testados de Disaster Recovery.
-- 🛠️ **Suporte Corporativo & Gestão de TI**: Suporte ágil e consultivo para computadores, servidores e usuários corporativos.
+- 💻 **Desenvolvimento de Soluções & Sistemas Sob Medida**: Softwares personalizados, painéis administrativos, sistemas de gestão e microsserviços proprietários ou open source.
+- 🌐 **Presença Web, Domínios & Publicação de Aplicações**: Criação de sites e landing pages responsivas, gestão avançada de DNS, certificados SSL e deploy contínuo.
+- ✉️ **Comunicação Corporativa & E-mail Empresarial**: Servidores de e-mail corporativo (Exchange, nuvem ou open source), migração segura e autenticação SPF/DKIM/DMARC.
+- 🔌 **Infraestrutura de Redes & Conectividade**: Diagnóstico, reestruturação física e lógica (LAN/VLAN), roteamento e redes Wi-Fi empresariais de alta densidade.
+- 🛡️ **Segurança da Informação & Firewalls**: Proteção perimetral avançada, VPNs seguras para filiais e trabalho remoto, e controle rigoroso de acessos.
+- 📊 **Monitoramento Proativo & Observabilidade (24/7)**: Plataformas em tempo real com alertas preventivos antes de qualquer incidente operacional.
+- ⚡ **Automação de Processos & Integração de Sistemas**: Scripts inteligentes e integração via APIs para eliminar tarefas manuais e otimizar rotinas.
+- 💾 **Continuidade de Negócios & Proteção de Dados (Backup/DR)**: Rotinas de backup imutável local e em nuvem e planos testados de Disaster Recovery.
+- 🛠️ **Consultoria & Suporte Técnico Corporativo**: Atendimento consultivo e suporte proativo para computadores, servidores e equipes.
 
 ---
 
