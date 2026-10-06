@@ -22,14 +22,17 @@
 
 ## 📌 Sobre a GM Tecnologia
 
-A **GM Tecnologia** é uma parceira estratégica para empresas que buscam modernização, resiliência e inovação através da tecnologia. Combinamos sólida experiência em infraestrutura, nuvem e desenvolvimento de soluções digitais:
+A **GM Tecnologia** é uma parceira estratégica para empresas que buscam presença digital de impacto, conectividade estável e segurança contínua:
 
-- 💻 **Desenvolvimento de Soluções Sob Medida**: Criação de sistemas web, portais corporativos, integrações de APIs e automação inteligente de processos repetitivos.
-- ☁️ **Computação em Nuvem & Modernização**: Migração e gestão de ambientes corporativos em nuvem, garantindo mobilidade, escalabilidade e redução de custos operacionais.
-- 🛡️ **Segurança da Informação & Conectividade**: Blindagem perimetral, interligação segura entre unidades de negócio e políticas ativas de proteção contra ameaças digitais.
-- 💾 **Continuidade de Negócios & Resiliência**: Estratégias preventivas de Disaster Recovery, backups imutáveis e garantia de alta disponibilidade sem interrupções.
-- 📊 **Observabilidade Proativa & Governança de TI**: Monitoramento 24/7 de ativos tecnológicos e suporte estruturado com SLAs ágeis.
-- 🚀 **Publicação Segura de Aplicações**: Hospedagem de alta performance com certificados criptografados e proteção contra ataques web (WAF).
+- 🌐 **Desenvolvimento Web & Portais**: Criação de sites institucionais modernos, landing pages de alta conversão e sistemas web sob medida.
+- 🌍 **Domínios, DNS & Publicação de Sites**: Registro e gerenciamento completo de domínios, zonas DNS, certificados SSL e deploy seguro.
+- ✉️ **E-mail Corporativo & Microsoft Exchange**: Implantação, administração e migração de Exchange/M365 com máxima entregabilidade (SPF, DKIM, DMARC).
+- 🔌 **Reestruturação de Redes Corporativas**: Diagnóstico, segmentação em VLANs, roteamento avançado e Wi-Fi corporativo de alta densidade.
+- 🛡️ **Segurança da Informação & Firewalls**: Proteção perimetral, VPNs criptografadas matriz-filial e home office, e controle rigoroso de acessos.
+- 📊 **Sistemas de Monitoramento & Observabilidade**: Implantação e parametrização de plataformas em tempo real com alertas preventivos 24/7.
+- ⚡ **Automação de Processos & Rotinas**: Eliminação de tarefas manuais com scripts inteligentes e integração entre sistemas.
+- 💾 **Backup Corporativo & Continuidade (DR)**: Rotinas de backup imutável, proteção contra ransomware e planos testados de Disaster Recovery.
+- 🛠️ **Suporte Corporativo & Gestão de TI**: Suporte ágil e consultivo para computadores, servidores e usuários corporativos.
 
 ---
 
