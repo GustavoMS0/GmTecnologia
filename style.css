@@ -67,6 +67,11 @@ body {
 }
 
 /* Details & Accordion Enhancements */
+details {
+  align-self: start;
+  height: auto;
+}
+
 details > summary {
   list-style: none;
 }
