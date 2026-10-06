@@ -1,293 +1,352 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
-  <head>
-    <!-- PAGE INFO -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GmTecnologia</title>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GM Tecnologia | Cloud & Infraestrutura Avançada</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração de cores do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9', // Sky 500
+                        secondary: '#1e293b', // Slate 800
+                        dark: '#0f172a', // Slate 900
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Efeito glassmorphism para o menu */
+        .glass {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Estilos do Accordion/Details */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-dark text-slate-300 font-sans antialiased selection:bg-primary selection:text-white">
 
-    <!-- Icones -->
-    <link rel="stylesheet" href="assets/fonts/style.css" />
+    <!-- HEADER / MENU -->
+    <header class="fixed w-full top-0 z-50 glass">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#home" class="text-2xl font-bold text-white tracking-tight">GM<span class="text-primary">Tecnologia</span>.</a>
+            
+            <nav class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#sobre" class="hover:text-primary transition-colors">Sobre a Empresa</a>
+                <a href="#servicos" class="hover:text-primary transition-colors">Serviços</a>
+                <a href="#tecnologias" class="hover:text-primary transition-colors">Tecnologias</a>
+                <a href="#contato" class="hover:text-primary transition-colors">Contato</a>
+            </nav>
 
-    <!-- Swiper -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
-
-    <!-- STYLES -->
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header id="header">
-      <nav class="container">
-        <a class="logo" href="#">Gm<span>Tecnologia</span>.</a>
-        <!-- menu -->
-        <div class="menu">
-          <ul class="grid">
-            <li><a class="title" href="#home">Início</a></li>
-            <li><a class="title" href="#about">Sobre</a></li>
-            <li><a class="title" href="#services">Serviços</a></li>
-            <li><a class="title" href="#testimonials">Depoimentos</a></li>
-            <li><a class="title" href="#contact">Contato</a></li>
-          </ul>
+            <a href="#contato" class="hidden md:inline-flex bg-primary hover:bg-sky-400 text-white px-5 py-2.5 rounded-lg font-medium transition-all shadow-lg shadow-sky-500/30">
+                Falar com Especialistas
+            </a>
         </div>
-        <!-- /menu -->
-        <div class="toggle icon-menu"></div>
-        <div class="toggle icon-close"></div>
-      </nav>
     </header>
 
-    <main>
-      <!-- HOME  -->
-      <section class="section" id="home">
-        <div class="container grid">
-          <div class="image">
-            <img
-              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80"
-              alt="Equipe de TI"
-            />
-          </div>
-          <div class="text">
-            <h2 class="title">
-              Serviços gerais em tecnologia e infraestrutura.
-            </h2>
-            <p>
-              Uma equipe preparada e treinada para garantir o serviço em TI sua
-              empresa merece.
-            </p>
-            <a
-              class="button"
-              href="https://api.whatsapp.com/send?phone=+5511969040579&text=Olá, estou entrando em contato através do projeto publicado em seu perfil no github."
-              target="_blank"
-              >Solicitar Serviços</a
-            >
-          </div>
+    <!-- HERO SECTION -->
+    <section id="home" class="relative pt-40 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Decorativo -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl z-0 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"></div>
         </div>
-      </section>
 
-      <div class="divider-1"></div>
-
-      <!-- ABOUT -->
-      <section class="section" id="about">
-        <div class="container grid">
-          <div class="image">
-            <img
-              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=891&q=80"
-              alt="Data center"
-            />
-          </div>
-          <div class="text">
-            <h2 class="title">Sobre nós</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Necessitatibus deleniti perferendis vel molestiae soluta, quaerat
-              beatae dicta ducimus praesentium architecto harum dolorum
-              distinctio illo earum assumenda itaque. Omnis, quam repellat.
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-primary font-semibold tracking-wider uppercase text-sm mb-4">Consultoria e Soluções em TI</h2>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                Especialistas em <br/>
+                <span class="gradient-text">Cloud & Infraestrutura</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Transformando a tecnologia em resultados. Projetos de alto nível em Microsoft Azure, Microsoft 365, Redes Seguras e Continuidade de Negócios para empresas de todos os portes.
             </p>
-            <br />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-              illum ratione impedit quae eum quis adipisci asperiores, est
-              doloribus distinctio excepturi minima eius dolore! Perferendis
-              laborum illo aspernatur repellendus ipsum.
-            </p>
-            <br />
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed
-              exercitationem, illum sapiente quasi hic iusto odio maiores esse
-              quaerat quis necessitatibus at odit, dolores dicta, officia ab
-              quos. Provident, quae.
-            </p>
-          </div>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#servicos" class="bg-primary hover:bg-sky-400 text-white px-8 py-4 rounded-lg font-medium transition-all shadow-lg shadow-sky-500/30 flex items-center justify-center gap-2">
+                    <i data-lucide="server" class="w-5 h-5"></i> Conhecer Soluções
+                </a>
+                <a href="#contato" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-lg font-medium transition-all border border-slate-700 flex items-center justify-center gap-2">
+                    <i data-lucide="message-square" class="w-5 h-5"></i> Entrar em Contato
+                </a>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <div class="divider-2"></div>
-
-      <!-- SERVICES -->
-      <section class="section" id="services">
-        <div class="container grid">
-          <header>
-            <h2 class="title">Serviços</h2>
-            <p class="subtitle">
-              Com mais de 10 anos no mercado, o
-              <strong>GmTecnologia</strong> Atuando com rapidez e qualidade para
-              proporcionar um ambiente de TI estruturado para sua casa ou
-              empresa.
-            </p>
-          </header>
-          <div class="cards grid">
-            <div class="card">
-              <i class="icon-earth"></i>
-              <h3 class="title">Internet</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                distinctio neque blanditiis, dolorem aperiam nulla explicabo
-                asperiores
-              </p>
+    <!-- SOBRE A EMPRESA -->
+    <section id="sobre" class="py-20 bg-slate-900/50 border-y border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Sobre a Empresa</h2>
+                    <div class="space-y-4 text-slate-400 text-lg leading-relaxed">
+                        <p>
+                            A <strong>GM Tecnologia</strong> é especializada em <strong>Cloud, Infraestrutura e Segurança</strong>. Com vasta experiência em ambientes corporativos complexos, nossa missão é modernizar a TI e apoiar o crescimento de empresas com soluções robustas e escaláveis.
+                        </p>
+                        <p>
+                            Possuímos um histórico sólido na implantação de plataformas do zero, desde a gestão de identidade e endpoints com <strong class="text-white">Entra ID e Intune</strong>, até a estruturação de redes seguras multifiliais utilizando <strong class="text-white">Fortinet e Ubiquiti</strong>.
+                        </p>
+                        <p>
+                            Acreditamos fortemente na automação e na observabilidade proativa (Zabbix, Grafana) para reduzir custos operacionais e garantir que a tecnologia seja uma alavanca para o seu negócio, e não uma dor de cabeça.
+                        </p>
+                    </div>
+                </div>
+                <!-- Estatísticas / Highlights -->
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                        <i data-lucide="calendar" class="w-8 h-8 text-primary mb-4"></i>
+                        <h3 class="text-3xl font-bold text-white mb-1">+8 Anos</h3>
+                        <p class="text-slate-400 text-sm">de experiência em TI corporativa</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                        <i data-lucide="cloud" class="w-8 h-8 text-primary mb-4"></i>
+                        <h3 class="text-3xl font-bold text-white mb-1">M365 & Azure</h3>
+                        <p class="text-slate-400 text-sm">Especialista no ecossistema Microsoft</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-primary mb-4"></i>
+                        <h3 class="text-3xl font-bold text-white mb-1">Zero Trust</h3>
+                        <p class="text-slate-400 text-sm">Foco em identidade e segurança de ponta</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                        <i data-lucide="activity" class="w-8 h-8 text-primary mb-4"></i>
+                        <h3 class="text-3xl font-bold text-white mb-1">100%</h3>
+                        <p class="text-slate-400 text-sm">Compromisso com alta disponibilidade</p>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-              <i class="icon-display"></i>
-              <h3 class="title">Suporte a Sistemas</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                distinctio neque blanditiis, dolorem aperiam nulla explicabo
-                asperiores
-              </p>
-            </div>
-            <div class="card">
-              <i class="icon-tools"></i>
-              <h3 class="title">Manutenção preventiva</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
-                distinctio neque blanditiis, dolorem aperiam nulla explicabo
-                asperiores
-              </p>
-            </div>
-          </div>
         </div>
-      </section>
+    </section>
 
-      <div class="divider-1"></div>
-
-      <!-- TESTIMONIALS -->
-      <section class="section" id="testimonials">
-        <div class="container">
-          <header>
-            <h2 class="title">
-              Depoimentos de quem já solicitou nossos serviços
-            </h2>
-          </header>
-          <div class="testimonials swiper-container">
-            <div class="swiper-wrapper">
-              <div class="testimonials swiper-slide">
-                <blockquote>
-                  <p>
-                    <span>&ldquo;</span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Repellendus nihil, sed necessitatibus excepturi iure
-                    officiis
-                  </p>
-                  <cite>
-                    <img
-                      src="https://scontent.fcgh2-1.fna.fbcdn.net/v/t1.6435-1/s200x200/137523921_3517567815026463_5297806748785333733_n.jpg?_nc_cat=100&ccb=1-3&_nc_sid=7206a8&_nc_eui2=AeGl3uWA5yApCI7PdZuR5-fbjyM7rmC9ks-PIzuuYL2Sz5h_ISsZTMXRPcH8ELcYl74b6pHx4_CfVKbK_X-J7LUB&_nc_ohc=Jz1_YP1tT8MAX-yVqGt&_nc_oc=AQnraJGhHtKUgO-wzbh4rzT5nSuHuiqwc4e3YtyY4vATAKlqzZ5XReFai4_qfVppTtE&tn=DWHjJkX-Q0WCq4A7&_nc_ht=scontent.fcgh2-1.fna&tp=7&oh=37b359b48e73a7f7906421b88143c9ed&oe=60DD1D46"
-                      alt="Foto de Eduardo Silva"
-                    />
-                    Eduardo Silva
-                  </cite>
-                </blockquote>
-              </div>
-
-              <div class="testimonials swiper-slide">
-                <blockquote>
-                  <p>
-                    <span>&ldquo;</span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Repellendus nihil, sed necessitatibus excepturi iure
-                    officiis
-                  </p>
-                  <cite>
-                    <img
-                      src="https://scontent.fcgh2-1.fna.fbcdn.net/v/t1.6435-9/90110214_1369714569902485_1610814977420034048_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeFspvFb9Z-x6_XJYVZzh-43H7P7Qvx3SzIfs_tC_HdLMgOh-Rufxb6y7xuLtZUzwiiYZPomHP_Fr_aRZICQlJjn&_nc_ohc=PPVLSXk-wzwAX9cICgq&_nc_ht=scontent.fcgh2-1.fna&oh=be31676ba7c00307ad36bac67179ba4f&oe=60DCAAB1"
-                      alt="Foto Raphael"
-                    />
-                    Raphael
-                  </cite>
-                </blockquote>
-              </div>
-
-              <div class="testimonials swiper-slide">
-                <blockquote>
-                  <p>
-                    <span>&ldquo;</span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Repellendus nihil, sed necessitatibus excepturi iure
-                    officiis
-                  </p>
-                  <cite>
-                    <img
-                      src="https://scontent.fcgh2-1.fna.fbcdn.net/v/t1.6435-1/p160x160/139621658_3757700230980534_1620363834447969625_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=7206a8&_nc_eui2=AeEKCy0LsO_W26YWtnx2l-k55eQ2horGsHLl5DaGisawcoklqTCUxFxBO5rl9HqN4MjUjcXqGE8eiSHWDX6QGyeM&_nc_ohc=NsC7kOrp-SoAX_bZ-Rh&_nc_ht=scontent.fcgh2-1.fna&tp=6&oh=4c218e713bfca36f48237a7ce69c3766&oe=60DC682E"
-                      alt="Foto de Jordan Asin"
-                    />
-                    Jordan Asin
-                  </cite>
-                </blockquote>
-              </div>
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Serviços Especializados</h2>
+                <p class="text-slate-400 text-lg">Soluções completas e estratégicas para garantir segurança, disponibilidade e escalabilidade para a sua infraestrutura.</p>
             </div>
 
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-          </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group">
+                    <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <i data-lucide="cloud" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Cloud & Modern Workplace</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Migração e sustentação no <strong>Microsoft Azure</strong>. Gestão completa do <strong>Microsoft 365</strong>, controle de dispositivos empresariais via <strong>Intune (MDM/MAM)</strong> e governança de identidade robusta com <strong>Microsoft Entra ID</strong> (MFA, Conditional Access).
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group">
+                    <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <i data-lucide="network" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Redes & Segurança</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Projetos e sustentação de redes corporativas. Hardening e gestão de Firewalls <strong>Fortinet FortiGate</strong> (VPN Site-to-Site, IPSec), proxy reverso seguro com Nginx e Cloudflare, e estruturação de Wi-Fi empresarial com <strong>Ubiquiti UniFi</strong>.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group">
+                    <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <i data-lucide="hard-drive" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Virtualização & Backup (DR)</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Implementação de estratégias de Disaster Recovery e proteção de dados utilizando <strong>Veeam Backup e Acronis</strong>. Administração e provisionamento de ambientes virtualizados de alta disponibilidade com <strong>Hyper-V e VMware vSphere</strong>.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group">
+                    <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <i data-lucide="monitor-dot" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Observabilidade & ITSM</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Monitoramento proativo e em tempo real da sua operação com <strong>Zabbix e Grafana</strong> (descoberta SNMP e integrações de API). Estruturação completa da plataforma <strong>GLPI</strong> para gestão de chamados, automação de inventário e SLAs.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-slate-800/50 hover:bg-slate-800 p-8 rounded-3xl border border-slate-700 transition-all hover:border-primary/50 group md:col-span-2 lg:col-span-1 lg:col-start-2">
+                    <div class="w-14 h-14 bg-sky-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+                        <i data-lucide="globe" class="w-7 h-7 text-primary group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Publicação de Sites e Sistemas</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Hospedagem ágil e segura para aplicações web. Configuração de proxy reverso com <strong>Nginx</strong>, publicação local externa segura com <strong>Cloudflare Tunnels</strong> e gerenciamento de domínios corporativos.
+                    </p>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <div class="divider-2"></div>
+    <!-- TECNOLOGIAS / PILARES -->
+    <section id="tecnologias" class="py-20 bg-slate-900/50 border-y border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-12">Pilares Tecnológicos</h2>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                
+                <details class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:bg-slate-700/50 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="cloud" class="w-5 h-5 text-primary"></i> Computação em Nuvem (Cloud)</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-slate-400 p-5 border-t border-slate-700/50 bg-slate-800/50 leading-relaxed">
+                        Migração e gerenciamento de infraestrutura em nuvem (pública ou híbrida). Implementação de soluções escaláveis (IaaS/PaaS) e modernização do ambiente de trabalho, garantindo alta disponibilidade e colaboração segura para sua equipe.
+                    </div>
+                </details>
 
-      <!-- CONTACT -->
-      <section class="section" id="contact">
-        <div class="container grid">
-          <div class="text">
-            <h2 class="title">Entre em contato com a gente!</h2>
-            <p>
-             Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                <details class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:bg-slate-700/50 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="shield" class="w-5 h-5 text-primary"></i> Gestão de Identidades e Acessos</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-slate-400 p-5 border-t border-slate-700/50 bg-slate-800/50 leading-relaxed">
+                        Controle rigoroso sobre quem acessa os dados da empresa. Implementação de Single Sign-On (SSO), autenticação multifator (MFA), acesso condicional e gerenciamento centralizado de dispositivos corporativos (MDM) contra acessos não autorizados.
+                    </div>
+                </details>
+
+                <details class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:bg-slate-700/50 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="lock" class="w-5 h-5 text-primary"></i> Segurança e Redes Corporativas</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-slate-400 p-5 border-t border-slate-700/50 bg-slate-800/50 leading-relaxed">
+                        Estruturação e proteção de redes complexas. Interligação de filiais através de VPNs seguras, proteção contra ameaças via Firewalls de Próxima Geração (NGFW) e implantação de redes sem fio corporativas de alta performance.
+                    </div>
+                </details>
+
+                <details class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:bg-slate-700/50 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="server" class="w-5 h-5 text-primary"></i> Continuidade de Negócios e Backup</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-slate-400 p-5 border-t border-slate-700/50 bg-slate-800/50 leading-relaxed">
+                        Garantia de que a sua operação não vai parar em caso de imprevistos. Arquitetura de clusters de virtualização de alta disponibilidade e elaboração de planos robustos de backup, replicação e Disaster Recovery.
+                    </div>
+                </details>
+
+                <details class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:bg-slate-700/50 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="activity" class="w-5 h-5 text-primary"></i> Observabilidade e Governança</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-slate-400 p-5 border-t border-slate-700/50 bg-slate-800/50 leading-relaxed">
+                        Acompanhamento proativo de todos os ativos de tecnologia da empresa em tempo real. Criação de dashboards de saúde e desempenho para prevenir falhas, integrado a um sistema centralizado de gestão de chamados (ITSM).
+                    </div>
+                </details>
+
+                <details class="group bg-slate-800 border border-slate-700 rounded-xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                    <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-white hover:bg-slate-700/50 transition-colors">
+                        <span class="flex items-center gap-3"><i data-lucide="globe" class="w-5 h-5 text-primary"></i> Publicação Segura de Aplicações</span>
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-slate-400 p-5 border-t border-slate-700/50 bg-slate-800/50 leading-relaxed">
+                        Hospedagem, balanceamento de carga e publicação ágil de sistemas ou sites. Aplicação de camadas extras de segurança como túneis criptografados, Web Application Firewall (WAF) e proxies reversos.
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="py-24 relative overflow-hidden">
+        <!-- Decorativo -->
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl z-0 pointer-events-none">
+            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-t-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-4xl font-bold text-white mb-6">Pronto para modernizar sua TI?</h2>
+            <p class="text-xl text-slate-400 mb-10 leading-relaxed">
+                Seja para uma migração para a nuvem, estruturação de uma rede segura ou suporte avançado, estamos à disposição para entender o seu cenário e propor a melhor solução tecnológica.
             </p>
-            <a
-              href="https://api.whatsapp.com/send?phone=+5511969040579&text=Olá, estou entrando em contato através do projeto publicado em seu perfil no github."
-              class="button"
-              target="_blank"
-              ><i class="icon-whatsapp"></i>Entrar em contato</a
-            >
-          </div>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6 mb-16">
+                <a href="https://api.whatsapp.com/send?phone=+5511969040579&text=Olá GM Tecnologia, vi o site e gostaria de falar sobre um projeto de TI." 
+                   target="_blank"
+                   class="bg-green-600 hover:bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg shadow-green-600/30 flex items-center justify-center gap-3">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i> Chamar no WhatsApp
+                </a>
+            </div>
 
-          <div class="link">
-            <ul class="grid">
-              <li><i class="icon-phone"></i>(11) 96904-0579</li>
-              <li>
-                <i class="icon-map-pin"></i>R. Dolores Creti, 107, Barueri-SP
-              </li>
-              <li><i class="icon-mail"></i>gustavomartins0911@gmail.com</li>
-            </ul>
-          </div>
+            <!-- Contatos Grid -->
+            <div class="grid sm:grid-cols-3 gap-6 text-left">
+                <a href="mailto:gustavo.suportetec@gmail.com" class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 hover:border-slate-500 transition-colors flex items-center gap-4">
+                    <div class="bg-slate-700 p-3 rounded-xl"><i data-lucide="mail" class="w-6 h-6 text-white"></i></div>
+                    <div>
+                        <p class="text-sm text-slate-400">E-mail</p>
+                        <p class="text-white font-medium truncate" title="gustavo.suportetec@gmail.com">gustavo.suportetec...</p>
+                    </div>
+                </a>
+                <a href="https://linkedin.com/in/gustavotecnologia" target="_blank" class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 hover:border-slate-500 transition-colors flex items-center gap-4">
+                    <div class="bg-slate-700 p-3 rounded-xl"><i data-lucide="linkedin" class="w-6 h-6 text-white"></i></div>
+                    <div>
+                        <p class="text-sm text-slate-400">LinkedIn</p>
+                        <p class="text-white font-medium">/gustavotecnologia</p>
+                    </div>
+                </a>
+                <a href="https://github.com/GustavoMS0" target="_blank" class="bg-slate-800/80 p-6 rounded-2xl border border-slate-700 hover:border-slate-500 transition-colors flex items-center gap-4">
+                    <div class="bg-slate-700 p-3 rounded-xl"><i data-lucide="github" class="w-6 h-6 text-white"></i></div>
+                    <div>
+                        <p class="text-sm text-slate-400">GitHub</p>
+                        <p class="text-white font-medium">/GustavoMS0</p>
+                    </div>
+                </a>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <div class="divider-1"></div>
-    </main>
-
-    <footer class="section">
-      <div class="container grid">
-        <div class="brand">
-          <a class="logo logo-alt" href="#home">Gm<span>Tecnologia</span>.</a>
-          <p>©2021 GmTecnologia.</p>
-          <p>Todos os direitos reservados.</p>
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-800 bg-dark py-10">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-500 text-sm">© 2026 GM Tecnologia. Todos os direitos reservados.</p>
+            <div class="text-slate-500 text-sm flex gap-4">
+                <span>Osasco - SP</span>
+            </div>
         </div>
-
-        <div class="social grid">
-          <a href="https://www.instagram.com/_gu.martins/" target="_blank"
-            ><i class="icon-instagram"></i></a
-          ><a href="https://www.facebook.com/GustavoMs0/" target="_blank"
-            ><i class="icon-facebook"></i></a
-          ><a href="#"><i class="icon-youtube"></i></a>
-        </div>
-      </div>
     </footer>
 
-    <a href="#home" class="back-to-top"><i class="icon-arrow-up"></i></a>
-
-    <!-- Swiper -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <!-- Scrollreveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <!-- main.js-->
-    <script src="main.js"></script>
-  </body>
+    <!-- Inicializar Ícones -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
 </html>
+
