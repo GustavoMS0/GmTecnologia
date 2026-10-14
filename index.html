@@ -7,10 +7,10 @@
     
     <!-- Meta Tags Principais & SEO -->
     <meta name="description" content="GM Tecnologia - Consultoria corporativa em TI, desenvolvimento de soluções e sistemas sob medida, presença web, e-mail corporativo, infraestrutura de redes, segurança da informação, monitoramento proativo e continuidade de negócios.">
-    <meta name="keywords" content="GM Tecnologia, Desenvolvimento de Soluções, Sistemas Web, Automação de Processos, Consultoria TI, Presença Web, Domínios, DNS, E-mail Corporativo, Redes Corporativas, Segurança da Informação, Firewalls, Monitoramento 24/7, Backup Corporativo, Open Source, Osasco, SP">
     <meta name="author" content="GM Tecnologia">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0f172a">
+    <link rel="canonical" href="https://gustavoms0.github.io/GmTecnologia/">
 
     <!-- Open Graph / Redes Sociais -->
     <meta property="og:type" content="website">
@@ -19,47 +19,60 @@
     <meta property="og:locale" content="pt_BR">
     <meta property="og:url" content="https://gustavoms0.github.io/GmTecnologia/">
     <meta property="og:site_name" content="GM Tecnologia">
+    <meta property="og:image" content="https://gustavoms0.github.io/GmTecnologia/assets/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="GM Tecnologia - TI Estratégica, Desenvolvimento de Soluções e Infraestrutura">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="GM Tecnologia | TI Estratégica, Desenvolvimento de Soluções & Infraestrutura">
     <meta name="twitter:description" content="Consultoria corporativa em TI, desenvolvimento de software, automações, redes e segurança.">
+    <meta name="twitter:image" content="https://gustavoms0.github.io/GmTecnologia/assets/og-image.png">
+    <meta name="twitter:image:alt" content="GM Tecnologia - TI Estratégica, Desenvolvimento de Soluções e Infraestrutura">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <link rel="alternate icon" href="assets/favicon.svg">
 
-    <!-- Preconnects para Performance -->
+    <!-- Fonte: Plus Jakarta Sans (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap">
 
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0ea5e9', // Sky 500
-                        'primary-hover': '#38bdf8', // Sky 400
-                        secondary: '#1e293b', // Slate 800
-                        dark: '#0f172a', // Slate 900
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind CSS (pré-compilado; ver README para o comando de build) -->
+    <link rel="stylesheet" href="assets/css/tailwind.css">
 
-    <!-- Estilos Customizados & Fontes -->
+    <!-- Estilos Customizados -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Ícones Lucide -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Ícones Lucide (v0.577.0, hospedado localmente) -->
+    <script src="assets/js/lucide.min.js" defer></script>
+
+    <!-- Dados Estruturados (Schema.org) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "GM Tecnologia",
+        "description": "Consultoria corporativa em TI, desenvolvimento de soluções e sistemas sob medida, presença web, e-mail corporativo, infraestrutura de redes, segurança da informação, monitoramento e continuidade de negócios.",
+        "url": "https://gustavoms0.github.io/GmTecnologia/",
+        "image": "https://gustavoms0.github.io/GmTecnologia/assets/og-image.png",
+        "telephone": "+55-11-96904-0579",
+        "email": "gustavo.suportetec@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Osasco",
+            "addressRegion": "SP",
+            "addressCountry": "BR"
+        },
+        "sameAs": [
+            "https://linkedin.com/in/gustavotecnologia",
+            "https://github.com/GustavoMS0"
+        ]
+    }
+    </script>
 </head>
 <body class="bg-dark text-slate-300 font-sans antialiased selection:bg-primary selection:text-white min-h-screen flex flex-col overflow-x-hidden">
 
@@ -804,10 +817,14 @@
 
     <!-- Toast Feedback para Cópia -->
     <div id="copy-toast" 
-         class="toast-feedback fixed bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-50 bg-slate-800 text-white text-xs sm:text-sm px-4 sm:px-5 py-3 rounded-2xl border border-slate-700 shadow-2xl flex items-center gap-2.5 max-w-[90vw]"
-         role="alert">
-        <i data-lucide="check-circle-2" class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 flex-shrink-0"></i>
-        <span class="toast-text font-medium truncate">E-mail copiado com sucesso!</span>
+         class="toast-feedback fixed bottom-6 sm:bottom-8 left-1/2 z-50 bg-slate-800 text-white text-xs sm:text-sm px-4 sm:px-5 py-3 rounded-2xl border border-slate-700 shadow-2xl flex items-center gap-2.5 max-w-[90vw]"
+         role="status"
+         aria-live="polite"
+         aria-atomic="true"
+         aria-hidden="true">
+        <span class="toast-icon-success flex items-center flex-shrink-0"><i data-lucide="check-circle-2" class="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400"></i></span>
+        <span class="toast-icon-error hidden flex items-center flex-shrink-0"><i data-lucide="alert-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-rose-400"></i></span>
+        <span class="toast-text font-medium truncate"></span>
     </div>
 
     <!-- Scripts Principais -->

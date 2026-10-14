@@ -4,14 +4,13 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Initialize Lucide Icons
-  const initIcons = () => {
-    if (typeof lucide !== 'undefined' && lucide.createIcons) {
-      lucide.createIcons();
-    }
-  };
-  initIcons();
-  window.addEventListener('load', initIcons);
+  // 1. Initialize Lucide Icons (script carregado com defer antes deste arquivo)
+  if (typeof lucide !== 'undefined' && lucide.createIcons) {
+    lucide.createIcons();
+  }
+
+  const prefersReducedMotion = () =>
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // 2. Header Scroll Effect
   const header = document.querySelector('header');
@@ -32,20 +31,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeIcon = document.getElementById('close-icon');
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
+  const isMenuOpen = () => mobileMenuBtn?.getAttribute('aria-expanded') === 'true';
+
+  // Elementos focáveis do diálogo: o botão de alternância (que fecha o menu) + links do menu
+  const getMenuFocusables = () => {
+    const items = mobileMenu
+      ? Array.from(mobileMenu.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'))
+      : [];
+    return mobileMenuBtn ? [mobileMenuBtn, ...items] : items;
+  };
+
   function openMobileMenu() {
     mobileMenu?.classList.remove('hidden');
     mobileMenuBtn?.setAttribute('aria-expanded', 'true');
+    mobileMenuBtn?.setAttribute('aria-label', 'Fechar menu de navegação');
     menuIcon?.classList.add('hidden');
     closeIcon?.classList.remove('hidden');
     document.body.classList.add('overflow-hidden');
+    // Move o foco para o primeiro link do menu
+    mobileMenu?.querySelector('a[href]')?.focus();
   }
 
-  function closeMobileMenu() {
+  function closeMobileMenu({ restoreFocus = true } = {}) {
     mobileMenu?.classList.add('hidden');
     mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+    mobileMenuBtn?.setAttribute('aria-label', 'Abrir menu de navegação');
     menuIcon?.classList.remove('hidden');
     closeIcon?.classList.add('hidden');
     document.body.classList.remove('overflow-hidden');
+    if (restoreFocus) mobileMenuBtn?.focus();
   }
 
   mobileMenuBtn?.addEventListener('click', () => {
@@ -59,14 +73,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   mobileNavLinks.forEach((link) => {
     link.addEventListener('click', () => {
-      closeMobileMenu();
+      // O foco segue a navegação para a âncora; não devolve ao botão
+      closeMobileMenu({ restoreFocus: false });
     });
   });
 
-  // Close on Escape key
+  // Escape fecha o menu; Tab/Shift+Tab ficam presos dentro do diálogo enquanto aberto
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenuBtn?.getAttribute('aria-expanded') === 'true') {
+    if (!isMenuOpen()) return;
+
+    if (e.key === 'Escape') {
+      e.preventDefault();
       closeMobileMenu();
+      return;
+    }
+
+    if (e.key === 'Tab') {
+      const focusables = getMenuFocusables();
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement;
+
+      if (!focusables.includes(active)) {
+        e.preventDefault();
+        first.focus();
+      } else if (e.shiftKey && active === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && active === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
   });
 
@@ -115,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: prefersReducedMotion() ? 'auto' : 'smooth'
     });
   });
 
@@ -124,36 +162,63 @@ document.addEventListener('DOMContentLoaded', () => {
   const toast = document.getElementById('copy-toast');
   let toastTimeout = null;
 
-  function showToast(message = 'E-mail copiado com sucesso!') {
+  function showToast(message = 'E-mail copiado com sucesso!', type = 'success') {
     if (!toast) return;
     const toastText = toast.querySelector('.toast-text');
-    if (toastText) toastText.textContent = message;
+    toast.querySelector('.toast-icon-success')?.classList.toggle('hidden', type !== 'success');
+    toast.querySelector('.toast-icon-error')?.classList.toggle('hidden', type === 'success');
 
+    // O texto só é inserido quando o toast é exibido, para ser anunciado pela região aria-live
+    if (toastText) toastText.textContent = message;
+    toast.setAttribute('aria-hidden', 'false');
     toast.classList.add('show');
+
     clearTimeout(toastTimeout);
     toastTimeout = setTimeout(() => {
       toast.classList.remove('show');
-    }, 3200);
+      toast.setAttribute('aria-hidden', 'true');
+      if (toastText) toastText.textContent = '';
+    }, type === 'success' ? 3200 : 5000);
+  }
+
+  // Fallback para navegadores sem Clipboard API (ou fora de contexto seguro)
+  function legacyCopy(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'fixed';
+    textarea.style.top = '-1000px';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    let ok = false;
+    try {
+      ok = document.execCommand('copy');
+    } catch {
+      ok = false;
+    }
+    document.body.removeChild(textarea);
+    return ok;
   }
 
   copyEmailButtons.forEach((btn) => {
-    btn.addEventListener('click', async (e) => {
+    btn.addEventListener('click', async () => {
       const email = btn.getAttribute('data-email') || 'gustavo.suportetec@gmail.com';
+      let copied = false;
       try {
-        await navigator.clipboard.writeText(email);
-        showToast('E-mail copiado com sucesso!');
-      } catch (err) {
-        const textarea = document.createElement('textarea');
-        textarea.value = email;
-        document.body.appendChild(textarea);
-        textarea.select();
-        try {
-          document.execCommand('copy');
-          showToast('E-mail copiado com sucesso!');
-        } catch {
-          window.location.href = `mailto:${email}`;
+        if (navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(email);
+          copied = true;
         }
-        document.body.removeChild(textarea);
+      } catch {
+        copied = false;
+      }
+      if (!copied) copied = legacyCopy(email);
+
+      if (copied) {
+        showToast('E-mail copiado com sucesso!', 'success');
+      } else {
+        showToast(`Não foi possível copiar. Use: ${email}`, 'error');
       }
     });
   });
@@ -200,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         animation = el.animate(
           { height: [startHeight, endHeight] },
-          { duration: 280, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' }
+          { duration: prefersReducedMotion() ? 0 : 280, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' }
         );
 
         animation.onfinish = () => {
@@ -229,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           animation = el.animate(
             { height: [startHeight, endHeight] },
-            { duration: 320, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' }
+            { duration: prefersReducedMotion() ? 0 : 320, easing: 'cubic-bezier(0.16, 1, 0.3, 1)' }
           );
 
           animation.onfinish = () => {

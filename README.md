@@ -38,12 +38,13 @@ A **GM Tecnologia** é uma parceira estratégica para empresas de todos os porte
 
 ## ⚡ Otimizações Implementadas no Projeto
 
-- **📱 Menu Mobile Responsivo**: Drawer moderno com transições fluidas e botão de alternância acessível (`aria-expanded`, controle por teclado).
+- **📱 Menu Mobile Responsivo**: Drawer com transições suaves; ao abrir, o foco vai para o menu, `Tab` fica restrito a ele, `Esc` fecha e o foco retorna ao botão (`aria-expanded`).
 - **🧭 ScrollSpy Inteligente**: Identificação automática da seção visível na tela e destaque em tempo real no menu superior.
-- **📋 Copiar E-mail com Feedback Visual**: Botão de cópia rápida com notificação flutuante (*toast*) para agilizar o contato comercial.
+- **📋 Copiar E-mail com Feedback Visual**: Botão de cópia rápida com notificação flutuante (*toast*) anunciada a leitores de tela, indicando sucesso ou falha da cópia.
 - **💬 Atendimento Flutuante (WhatsApp)**: Botão de ação rápida integrado com mensagem direta personalizada.
-- **🔍 SEO & Open Graph Completo**: Meta tags otimizadas para mecanismos de busca, cards sociais (LinkedIn, WhatsApp, Twitter) e favicon vetorial em SVG.
-- **🚀 Performance & Acessibilidade**: Tipografia corporativa *Plus Jakarta Sans* com `preconnect`, ícones Lucide vetorizados e conformidade semântica.
+- **🔍 SEO & Open Graph**: Meta description, URL canônica, imagem Open Graph/Twitter (`assets/og-image.png`), dados estruturados `LocalBusiness` (JSON-LD), `robots.txt` e `sitemap.xml`.
+- **🚀 Performance**: CSS do Tailwind pré-compilado e minificado (sem o Play CDN), ícones Lucide com versão fixa servidos localmente e fonte *Plus Jakarta Sans* via `<link>` com `preconnect`.
+- **♿ Cuidados de Acessibilidade**: HTML semântico, rótulos ARIA nos controles, foco visível e respeito à preferência `prefers-reduced-motion` (desativa rolagem suave, animações do acordeão e o pulso do botão do WhatsApp). O site não passou por auditoria formal de acessibilidade (WCAG).
 - **🧹 Limpeza e Padronização do Repositório**: Remoção de arquivos legados desnecessários, inclusão de `.gitignore` e estruturação modular (`style.css` e `main.js`).
 
 ---
@@ -53,10 +54,18 @@ A **GM Tecnologia** é uma parceira estratégica para empresas de todos os porte
 ```bash
 GmTecnologia/
 ├── assets/
-│   └── favicon.svg         # Favicon vetorial exclusivo da GM Tecnologia
+│   ├── css/
+│   │   └── tailwind.css    # CSS do Tailwind gerado (minificado) — não editar manualmente
+│   ├── js/
+│   │   └── lucide.min.js   # Ícones Lucide v0.577.0 (UMD, hospedado localmente)
+│   ├── favicon.svg         # Favicon vetorial exclusivo da GM Tecnologia
+│   └── og-image.png        # Imagem de compartilhamento (Open Graph / Twitter, 1200x630)
 ├── index.html              # Estrutura principal da landing page e SEO
 ├── style.css               # Estilos customizados, animações, scrollbar e print
 ├── main.js                 # Comportamento interativo, menu mobile, scrollspy e toast
+├── tailwind.config.js      # Configuração do Tailwind CSS (cores e fonte da marca)
+├── robots.txt / sitemap.xml
+├── LICENSE                 # Licença MIT
 ├── .gitignore              # Ignora arquivos de sistema e temporários
 └── README.md               # Documentação técnica do projeto
 ```
@@ -77,6 +86,16 @@ Como o projeto é construído em tecnologias web puras e leves (HTML5, Tailwind 
    ```
 3. Abrir o arquivo `index.html` em qualquer navegador ou utilizar a extensão **Live Server** no VS Code.
 
+### 🎨 Recompilar o CSS do Tailwind
+
+O arquivo `assets/css/tailwind.css` é gerado pelo Tailwind CSS v3 a partir das classes usadas em `index.html` e `main.js`. Sempre que adicionar ou alterar classes utilitárias, gere-o novamente:
+
+```bash
+npx tailwindcss@3.4.17 -c tailwind.config.js -o assets/css/tailwind.css --minify
+```
+
+> Sem Node.js, é possível usar o [executável standalone do Tailwind CSS v3.4.17](https://github.com/tailwindlabs/tailwindcss/releases/tag/v3.4.17) com os mesmos parâmetros.
+
 ---
 
 ## 📬 Contato & Redes
@@ -85,6 +104,12 @@ Como o projeto é construído em tecnologias web puras e leves (HTML5, Tailwind 
 - ✉️ **E-mail**: [gustavo.suportetec@gmail.com](mailto:gustavo.suportetec@gmail.com)
 - 💼 **LinkedIn**: [/gustavotecnologia](https://linkedin.com/in/gustavotecnologia)
 - 🐙 **GitHub**: [@GustavoMS0](https://github.com/GustavoMS0)
+
+---
+
+## 📄 Licença
+
+Distribuído sob a licença MIT. Consulte o arquivo [`LICENSE`](LICENSE).
 
 ---
 
