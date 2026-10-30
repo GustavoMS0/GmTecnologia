@@ -191,35 +191,57 @@ section { padding: 80px 0; }
   .services { grid-template-columns: 1fr 1fr; column-gap: 56px; }
 }
 
-/* --------------------------------------------------------------- GLPI */
-.glpi-grid { display: grid; gap: 48px; align-items: start; }
-.glpi-grid > div { display: grid; gap: 24px; }
-.plugins { list-style: none; margin: 8px 0 0; padding: 0; display: grid; }
-.plugins li { padding: 20px 0; border-top: 1px solid var(--line-dark); }
-.plugins h3 { font-size: 21px; margin-bottom: 6px; }
-.plugins h3 a { color: var(--text-light); text-decoration: underline; text-decoration-color: var(--amber); text-underline-offset: 5px; text-decoration-thickness: 2px; }
-.plugins p { color: var(--muted-light); }
+.services .tags { margin-top: 10px; font-size: 14px; font-weight: 500; color: var(--amber-text); }
+
+/* --------------------------------------------------------------- Sobre */
+.about-grid { display: grid; gap: 48px; align-items: center; }
+.about-text { display: grid; gap: 18px; }
+.about-text p { color: var(--muted-dark); font-size: 18px; max-width: 64ch; }
+.highlights { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 2px solid var(--text-dark); }
+.highlights li {
+  display: grid; grid-template-columns: 28px auto; column-gap: 14px; align-items: baseline;
+  padding: 20px 0; border-bottom: 1px solid var(--line-light);
+}
+.highlights [data-lucide], .highlights .lucide { color: var(--amber-text); grid-row: span 2; align-self: start; margin-top: 4px; }
+.highlights b { font-family: var(--font-title); font-size: 26px; font-weight: 800; line-height: 1.2; }
+.highlights span { color: var(--muted-dark); }
+@media (min-width: 1024px) { .about-grid { grid-template-columns: 1.3fr 1fr; gap: 80px; } }
+
+/* --------------------------------------------------------------- Desenvolvimento */
+.section-head.on-dark p { color: var(--muted-light); }
+.dev-grid { display: grid; gap: 0; border-top: 1px solid var(--line-dark); }
+.dev-grid article { display: grid; gap: 12px; align-content: start; padding: 32px 0; border-bottom: 1px solid var(--line-dark); }
+.dev-grid [data-lucide], .dev-grid .lucide { width: 26px; height: 26px; color: var(--amber); }
+.dev-grid h3 { font-size: 22px; color: var(--text-light); }
+.dev-grid p { color: var(--muted-light); }
+.dev-grid ul { margin: 4px 0 0; padding-left: 20px; color: var(--text-light); display: grid; gap: 4px; font-size: 16px; }
+@media (min-width: 768px) {
+  .dev-grid { grid-template-columns: 1fr 1fr; column-gap: 56px; }
+}
+
+.glpi-block { display: grid; gap: 28px; margin-top: 56px; align-items: center; }
+.glpi-block > div { display: grid; gap: 12px; }
+.glpi-block h3 { font-size: 26px; color: var(--text-light); }
+.glpi-block p { color: var(--muted-light); max-width: 62ch; }
+.glpi-block a:not(.btn) { color: var(--text-light); text-decoration-color: var(--amber); text-underline-offset: 4px; text-decoration-thickness: 2px; }
 
 .premium {
   background: var(--amber); color: var(--ink); border-radius: 14px;
-  padding: 32px 28px; display: grid; gap: 16px;
+  padding: 28px; display: grid; gap: 14px;
 }
-.premium-tag { font-weight: 600; font-size: 15px; color: #4A2C04; }
-.premium h3 { font-size: 30px; font-weight: 800; }
-.premium ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; }
+.premium h3 { font-size: 26px; font-weight: 800; color: var(--ink); }
+.premium p { color: #2A2010; }
 .premium .btn { justify-self: start; }
-@media (min-width: 1024px) {
-  .glpi-grid { grid-template-columns: 1.2fr 1fr; gap: 72px; }
-  .premium { padding: 40px 36px; position: sticky; top: calc(var(--header-h) + 32px); }
-}
 
-/* --------------------------------------------------------------- Projetos */
-.projects { margin: 0; display: grid; border-top: 2px solid var(--text-dark); }
-.projects > div { display: grid; gap: 6px; padding: 22px 0; border-bottom: 1px solid var(--line-light); }
-.projects dt { font-family: var(--font-title); font-weight: 700; font-size: 20px; }
-.projects dd { margin: 0; color: var(--muted-dark); max-width: 70ch; }
-@media (min-width: 768px) {
-  .projects > div { grid-template-columns: 300px 1fr; gap: 32px; }
+.cta-strip {
+  margin-top: 56px; padding: 32px 0 0; border-top: 1px solid var(--line-dark);
+  display: grid; gap: 20px; align-items: center;
+}
+.cta-strip h3 { font-size: 24px; color: var(--text-light); margin-bottom: 8px; }
+.cta-strip p { color: var(--muted-light); max-width: 62ch; }
+@media (min-width: 1024px) {
+  .glpi-block { grid-template-columns: 1.3fr 1fr; gap: 64px; }
+  .cta-strip { grid-template-columns: 1fr auto; gap: 48px; }
 }
 
 /* --------------------------------------------------------------- Como trabalho */

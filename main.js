@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 7. Fluid, Smoothly Animated Accordion (Web Animations API)
   function initAnimatedAccordion() {
-    const detailsList = document.querySelectorAll('#duvidas details');
+    const detailsList = document.querySelectorAll('#pilares details');
 
     detailsList.forEach((el) => {
       const summary = el.querySelector('summary');
