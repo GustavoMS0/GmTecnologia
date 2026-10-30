@@ -207,22 +207,11 @@ section { padding: 80px 0; }
 .highlights span { color: var(--muted-dark); }
 @media (min-width: 1024px) { .about-grid { grid-template-columns: 1.3fr 1fr; gap: 80px; } }
 
-/* --------------------------------------------------------------- Desenvolvimento */
-.section-head.on-dark p { color: var(--muted-light); }
-.dev-grid { display: grid; gap: 0; border-top: 1px solid var(--line-dark); }
-.dev-grid article { display: grid; gap: 12px; align-content: start; padding: 32px 0; border-bottom: 1px solid var(--line-dark); }
-.dev-grid [data-lucide], .dev-grid .lucide { width: 26px; height: 26px; color: var(--amber); }
-.dev-grid h3 { font-size: 22px; color: var(--text-light); }
-.dev-grid p { color: var(--muted-light); }
-.dev-grid ul { margin: 4px 0 0; padding-left: 20px; color: var(--text-light); display: grid; gap: 4px; font-size: 16px; }
-@media (min-width: 768px) {
-  .dev-grid { grid-template-columns: 1fr 1fr; column-gap: 56px; }
-}
-
-.glpi-block { display: grid; gap: 28px; margin-top: 56px; align-items: center; }
-.glpi-block > div { display: grid; gap: 12px; }
-.glpi-block h3 { font-size: 26px; color: var(--text-light); }
-.glpi-block p { color: var(--muted-light); max-width: 62ch; }
+/* --------------------------------------------------------------- GLPI */
+.glpi-block { display: grid; gap: 32px; align-items: center; }
+.glpi-block > div { display: grid; gap: 16px; }
+.glpi-block h2 { color: var(--text-light); }
+.glpi-block p { color: var(--muted-light); max-width: 62ch; font-size: 18px; }
 .glpi-block a:not(.btn) { color: var(--text-light); text-decoration-color: var(--amber); text-underline-offset: 4px; text-decoration-thickness: 2px; }
 
 .premium {
